@@ -1,12 +1,9 @@
-const {
-  editFlowerByIdHandler,
-  deleteFlowerByIdHandler,
-} = require('./handler');
-
 const { 
   addFlowerHandler,
   getAllFlowersHandler,
   getFlowerByIdHandler,
+  editFlowerByIdHandler,
+  deleteFlowerByIdHandler,
  } = require('./controllers/FlowersController')
 
 const routes = [

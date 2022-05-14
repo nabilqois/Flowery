@@ -30,9 +30,28 @@ const getFlowerByIdHandler = async (request, h) => {
   }
 }
 
+const editFlowerByIdHandler = async (request, h) => {
+  try {
+    var flower = await Flower.findByIdAndUpdate(request.params.id, request.payload, { new: true });
+    return h.response(flower);
+  } catch (error) {
+    return h.response(error).code(500);
+  }
+}
+const deleteFlowerByIdHandler = async (request, h) => {
+  try {
+    var flower = await Flower.findByIdAndDelete(request.params.id);
+    return h.response(flower);
+  } catch (error) {
+    return h.response(error).code(500);
+  }
+}
+
 module.exports = {
   addFlowerHandler,
   getAllFlowersHandler,
   getFlowerByIdHandler,
+  editFlowerByIdHandler,
+  deleteFlowerByIdHandler,
 };
   
