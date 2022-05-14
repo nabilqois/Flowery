@@ -7,7 +7,7 @@ const addFlowerHandler = async(request, h) => {
       return h.response(result);
   } catch (error) {
       console.log(error)
-      return h.response(error).code(500);
+      return h.response({message: error.message}).code(500);
   }
 };
 
@@ -26,7 +26,7 @@ const getFlowerByIdHandler = async (request, h) => {
       var flower = await Flower.findById(request.params.id).exec();
       return h.response(flower);
   } catch (error) {
-      return h.response(error).code(500);
+      return h.response({message: error.message}).code(500);
   }
 }
 
