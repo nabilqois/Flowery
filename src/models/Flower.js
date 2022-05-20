@@ -4,26 +4,22 @@ const flowermodel = mongoose.Schema({
     global_name: {
         type: String,
         required: "Global Name is required",
-    }, 
-    local_name: {
-        type: String,
-        required: "Local Name is required",
-    }, 
+    },
     scientific_name: {
         type: String,
         required: "Scientific Name is required",
-    }, 
-    how_to_tend: {
+    },  
+    local_name: {
         type: String,
-        required: "How to Tend Name is required",
-    }, 
-    other_usage: {
-        type: String,
-        required: "Other Usage is required",
+        required: "Local Name is required",
     },
     reference: {
         type: String,
         required: "Reference is required",
+    },
+    images: {
+        type: String,
+        required: "Images is required",
     } 
 }, {
     timestamps: true
