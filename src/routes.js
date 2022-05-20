@@ -14,6 +14,11 @@ const {
   deleteUserByIdHandler,
  } = require('./controllers/UsersController')
 
+ const {
+   loginHandler,
+   logoutHandler,
+ } = require('./controllers/AuthController')
+
 const routes = [
   {
     method: 'GET',
@@ -34,6 +39,9 @@ const routes = [
     method: 'POST',
     path: '/users',
     handler: addUserHandler,
+    options: {
+      auth: false,
+    },
   },
   {
     method: 'GET',
@@ -64,6 +72,19 @@ const routes = [
     method: 'DELETE',
     path: '/users/{id}',
     handler: deleteUserByIdHandler,
+  },
+  {
+    method: 'POST',
+    path: '/login',
+    handler: loginHandler,
+    options: {
+      auth: false,
+    },
+  },
+  {
+    method: 'POST',
+    path: '/logout',
+    handler: logoutHandler,
   },
 ];
 module.exports = routes;
