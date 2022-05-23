@@ -37,7 +37,7 @@ const login = async (email, password) => {
 };
 
 const logout = token => (
-    Cache.set(`${BLACKLIST_CACHE_PREFIX}${token}`, 1, LOGIN_EXPIRATION_TIME)
+    Cache.set(`${BLACKLIST_CACHE_PREFIX}${token}`, 1, 0)
 );
 
 module.exports = {
