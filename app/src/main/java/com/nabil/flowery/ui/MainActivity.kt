@@ -1,4 +1,4 @@
-package com.nabil.flowery
+package com.nabil.flowery.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
