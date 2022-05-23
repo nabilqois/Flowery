@@ -46,6 +46,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_notification -> changeFragment(notificationFragment)
                 R.id.menu_profile -> changeFragment(profileFragment)
             }
+
+            if (it.itemId == R.id.menu_home) showFab() else hideFab()
+
             true
         }
     }
@@ -54,5 +57,13 @@ class MainActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()
+    }
+
+    private fun hideFab() {
+        binding.fabCamera.hide()
+    }
+
+    private fun showFab() {
+        binding.fabCamera.show()
     }
 }
