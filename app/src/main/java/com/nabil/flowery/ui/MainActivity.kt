@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_profile -> changeFragment(profileFragment)
             }
 
-            if (it.itemId == R.id.menu_home) showFab() else hideFab()
+            if (it.itemId != R.id.menu_home) showFab(false) else showFab(true)
 
             true
         }
@@ -59,11 +59,7 @@ class MainActivity : AppCompatActivity() {
         transaction.commit()
     }
 
-    private fun hideFab() {
-        binding.fabCamera.hide()
-    }
-
-    private fun showFab() {
-        binding.fabCamera.show()
+    private fun showFab(state: Boolean) {
+        if (state) binding.fabCamera.show() else binding.fabCamera.hide()
     }
 }
