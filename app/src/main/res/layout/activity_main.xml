@@ -19,7 +19,8 @@
         app:layout_anchor="@id/bottom_app_bar"
         app:tint="@color/white"
         android:backgroundTint="@color/primary_2"
-        android:src="@drawable/ic_camera" />
+        android:src="@drawable/ic_camera"
+        android:contentDescription="@string/camera_scan" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_app_bar"
