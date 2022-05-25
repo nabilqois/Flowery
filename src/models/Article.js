@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const articlesmodel = mongoose.Schema({
+    title_article: {
+        type: String,
+        required: "Content Article is required",
+    },
     content_article: {
         type: String,
         required: "Content Article is required",
