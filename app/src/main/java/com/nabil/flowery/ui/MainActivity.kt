@@ -1,5 +1,6 @@
 package com.nabil.flowery.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -51,6 +52,8 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+
+        binding.fabCamera.setOnClickListener { startCameraX() }
     }
 
     private fun changeFragment(fragment: Fragment) {
@@ -61,5 +64,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun showFab(state: Boolean) {
         if (state) binding.fabCamera.show() else binding.fabCamera.hide()
+    }
+
+    private fun startCameraX() {
+        val intent = Intent(this, CameraActivity::class.java)
+        startActivity(intent)
     }
 }
