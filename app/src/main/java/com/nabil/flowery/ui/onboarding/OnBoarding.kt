@@ -1,10 +1,13 @@
 package com.nabil.flowery.ui.onboarding
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.button.MaterialButton
 import com.nabil.flowery.R
 import com.nabil.flowery.databinding.ActivityOnBoarding2Binding
+import com.nabil.flowery.ui.MainActivity
 
 
 class OnBoarding : AppCompatActivity() {
@@ -18,6 +21,9 @@ class OnBoarding : AppCompatActivity() {
         binding = ActivityOnBoarding2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         setBoardingItems()
+        binding.gettingStartedButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
 
     }
 
