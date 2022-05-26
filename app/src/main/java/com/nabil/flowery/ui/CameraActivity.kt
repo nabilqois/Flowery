@@ -1,5 +1,6 @@
 package com.nabil.flowery.ui
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -62,6 +63,16 @@ class CameraActivity : AppCompatActivity() {
                         "Berhasil mengambil gambar.",
                         Toast.LENGTH_SHORT
                     ).show()
+
+                    // to ResultActivity
+                    val intent = Intent(this@CameraActivity, ResultActivity::class.java)
+                    intent.putExtra(ResultActivity.EXTRA_IMAGE, photoFile)
+                    intent.putExtra(
+                        "isBackCamera",
+                        cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA
+                    )
+                    startActivity(intent)
+                    finish()
                 }
             }
         )
