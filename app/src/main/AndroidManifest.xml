@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flowery">
         <activity
+            android:name=".ui.onboarding.OnBoarding"
+            android:exported="true"
+            android:label="@string/title_activity_on_boarding"
+            android:theme="@style/Theme.Flowery.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
