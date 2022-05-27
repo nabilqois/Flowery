@@ -2,6 +2,8 @@ package com.nabil.flowery.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.viewModels
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -10,12 +12,14 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.nabil.flowery.R
 import com.nabil.flowery.databinding.ActivityLoginBinding
+import com.nabil.flowery.model.AuthModel
 
 
 class LoginActivity : AppCompatActivity() {
 
 
     private lateinit var binding: ActivityLoginBinding
+    private val authModel: AuthModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +28,25 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.loginButton.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            val email = binding.emailBox.text.toString()
+            val password = binding.passBox.text.toString()
+
+            if (email.isEmpty()) {
+                binding.emailBox.error = "Email wajib diisi"
+            } else if (password.isEmpty()) {
+                binding.passBox.error = "Password wajib diisi"
+            }
+
+            authModel.getLoginData(email, password)
+
+            authModel.isError.observe(this) { isError ->
+                if (isError) {
+                    Toast.makeText(this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                } else {
+                    startActivity(Intent(this, MainActivity::class.java))
+
+                }
+            }
         }
 
     }
