@@ -5,14 +5,12 @@ const tutorialmodel = mongoose.Schema({
         type: String,
         required: "Flower Id is required",
     },
-    plant: {
+    plant: [{
         type: String,
-        required: "Plant Name is required",
-    },  
-    take_care: {
+    }],  
+    take_care: [{
         type: String,
-        required: "Take Care is required",
-    }
+    }]
 }, {
     timestamps: true
 });
