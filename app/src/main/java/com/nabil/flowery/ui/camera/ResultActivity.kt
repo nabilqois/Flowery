@@ -1,4 +1,4 @@
-package com.nabil.flowery.ui
+package com.nabil.flowery.ui.camera
 
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity

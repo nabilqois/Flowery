@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.nabil.flowery.R
 import com.nabil.flowery.databinding.ActivityMainBinding
+import com.nabil.flowery.ui.camera.CameraActivity
 import com.nabil.flowery.ui.fragments.FavoriteFragment
 import com.nabil.flowery.ui.fragments.HomeFragment
 import com.nabil.flowery.ui.fragments.NotificationFragment
@@ -23,15 +24,12 @@ class MainActivity : AppCompatActivity() {
     private val homeFragment by lazy {
         HomeFragment()
     }
-
     private val favoriteFragment by lazy {
         FavoriteFragment()
     }
-
     private val notificationFragment by lazy {
         NotificationFragment()
     }
-
     private val profileFragment by lazy {
         ProfileFragment()
     }

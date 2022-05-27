@@ -1,5 +1,6 @@
 package com.nabil.flowery.ui
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,9 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLogin2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.loginButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
 
     }
 

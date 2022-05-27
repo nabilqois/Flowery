@@ -1,4 +1,4 @@
-package com.nabil.flowery.ui
+package com.nabil.flowery.ui.camera
 
 import android.content.Intent
 import android.os.Build

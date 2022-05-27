@@ -14,7 +14,7 @@
         android:foregroundGravity="center"
         android:background="@drawable/view_background"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/next_button" />
+        app:layout_constraintBottom_toTopOf="@id/gettingStartedButton" />
 
     <LinearLayout
         android:id="@+id/imageContainer"
@@ -22,29 +22,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/OnBoardingImages"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/next_button"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="28dp"
-        android:background="@drawable/icon_background"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_baseline_chevron_right_24"
-        app:layout_constraintBottom_toTopOf="@+id/gettingStartedButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/white" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/gettingStartedButton"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginBottom="92dp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:text="@string/get_started"
@@ -54,7 +41,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

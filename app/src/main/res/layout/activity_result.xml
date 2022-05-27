@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ResultActivity">
+    tools:context=".ui.camera.ResultActivity">
 
     <ImageView
         android:id="@+id/result_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
+        android:src="@drawable/ic_image"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_image"/>
+        android:contentDescription="@string/result_kamera" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
