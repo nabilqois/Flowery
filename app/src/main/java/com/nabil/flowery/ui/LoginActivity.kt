@@ -9,18 +9,18 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.nabil.flowery.R
-import com.nabil.flowery.databinding.ActivityLogin2Binding
+import com.nabil.flowery.databinding.ActivityLoginBinding
 
 
 class LoginActivity : AppCompatActivity() {
 
 
-    private lateinit var binding: ActivityLogin2Binding
+    private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityLogin2Binding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.loginButton.setOnClickListener {
