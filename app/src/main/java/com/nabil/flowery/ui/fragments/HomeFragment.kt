@@ -29,16 +29,11 @@ class HomeFragment : Fragment() {
 
         setTitleTrivia()
 
-        var search = 0
-        var text1 = binding.edtSearch.text
-        binding.edtSearch.doOnTextChanged { _, _, _, count ->
-            search = count
-        }
-
+        val text1 = binding.edtSearch.text
         binding.layoutSearch.setEndIconOnClickListener {
-            if (search == 0) {
-                Toast.makeText(context, text1, Toast.LENGTH_SHORT).show()
-            } else if (search > 1){
+            if (text1!!.isEmpty()) {
+                Toast.makeText(context, "Jangan kosong", Toast.LENGTH_SHORT).show()
+            } else {
                 Toast.makeText(context, text1, Toast.LENGTH_SHORT).show()
             }
         }
