@@ -16,4 +16,5 @@
     <string name="onboarding1_text">Cari info bungamu melalui kamera!</string>
     <string name="onboarding2_text">Dapatkan tips cara merawat bunga!</string>
     <string name="onboarding3_text">Atur jadwal perawatan bunga!</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>

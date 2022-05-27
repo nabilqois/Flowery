@@ -14,6 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flowery">
         <activity
+            android:name=".ui.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.Flowery.NoActionBar" />
+        <activity
             android:name=".ui.ResultActivity"
             android:exported="false" />
         <activity
