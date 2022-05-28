@@ -12,7 +12,7 @@ data class LoginResponse(
 
 @Parcelize
 data class LoginResult(
-    var userId: String? = null,
-    var name: String? = null,
+//    var userId: String? = null,
+//    var name: String? = null,
     var token: String? = null
 ): Parcelable

@@ -10,7 +10,6 @@ class UserPref(context: Context) {
 
     fun setResponseLogin(value: LoginResult) {
         editor.putBoolean(IS_LOGIN, true)
-        editor.putString(NAME, value.name)
         editor.putString(TOKEN, value.token)
         editor.apply()
     }
@@ -18,7 +17,6 @@ class UserPref(context: Context) {
     fun getResponseLogin(): LoginResult {
         val data = LoginResult()
 
-        data.name = preferences.getString(NAME, "")
         data.token = preferences.getString(TOKEN, "")
         return data
     }
