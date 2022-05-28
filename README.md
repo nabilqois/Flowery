@@ -7,4 +7,5 @@
 * Added Camera Utils
 * Added LoginActivity
 * Added LoginActivity Dummy Logic
+* Added RegisterActivity
 * Added RegisterActivity Dummy Logic
