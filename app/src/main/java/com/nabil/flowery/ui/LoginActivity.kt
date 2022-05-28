@@ -13,6 +13,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.nabil.flowery.R
 import com.nabil.flowery.databinding.ActivityLoginBinding
 import com.nabil.flowery.model.AuthModel
+import com.nabil.flowery.pref.UserPref
 
 
 class LoginActivity : AppCompatActivity() {
@@ -43,8 +44,12 @@ class LoginActivity : AppCompatActivity() {
                 if (isError) {
                     Toast.makeText(this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
                 } else {
-                    startActivity(Intent(this, MainActivity::class.java))
-
+                    val loginResponse = authModel.loginData.value
+                    UserPref(this).setResponseLogin(loginResponse!!)
+                    val toMainActivity = Intent(this, MainActivity::class.java)
+                    toMainActivity.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(toMainActivity)
+                    finish()
                 }
             }
         }

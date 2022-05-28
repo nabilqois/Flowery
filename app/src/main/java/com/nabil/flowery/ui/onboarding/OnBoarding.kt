@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.nabil.flowery.R
 import com.nabil.flowery.databinding.ActivityOnBoarding2Binding
+import com.nabil.flowery.pref.UserPref
 import com.nabil.flowery.ui.LoginActivity
 import com.nabil.flowery.ui.MainActivity
 
@@ -19,6 +20,14 @@ class OnBoarding : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val session = UserPref(this)
+        if (session.isLoggedIn()) {
+            val toMainActivity = Intent(this, MainActivity::class.java)
+            startActivity(toMainActivity)
+            finish()
+        }
+
         binding = ActivityOnBoarding2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         setBoardingItems()
