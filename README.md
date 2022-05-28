@@ -5,6 +5,7 @@
 * Added CameraX and CameraActivity
 * Added Result Activity
 * Added Camera Utils
+* Added User Pref (Save Token and Login State)
 * Added LoginActivity
 * Added LoginActivity Dummy Logic
 * Added RegisterActivity
