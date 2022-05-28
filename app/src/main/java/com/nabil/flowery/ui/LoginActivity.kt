@@ -54,6 +54,13 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        binding.registerButton.setOnClickListener{
+            val toRegisterActivity = Intent(this, RegisterActivity::class.java)
+            toRegisterActivity.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(toRegisterActivity)
+            finish()
+        }
+
     }
 
 

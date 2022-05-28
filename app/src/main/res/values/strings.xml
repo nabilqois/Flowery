@@ -23,4 +23,10 @@
     <string name="login_title">Join Flowery</string>
     <string name="login_email">Email</string>
     <string name="login_password">Password</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="name">Name</string>
+    <string name="register_name_hint">Enter Your Name Here!</string>
+    <string name="email_hint">Enter Your Email Here!</string>
+    <string name="pass_hint">Enter Your Password Here!</string>
+    <string name="register_title">Don\'t Have an Account ? Come Join Us!</string>
 </resources>
