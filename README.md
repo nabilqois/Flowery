@@ -9,3 +9,4 @@
 * Added LoginActivity Dummy Logic
 * Added RegisterActivity
 * Added RegisterActivity Dummy Logic
+* Added RegisterActivity with Flowery API
