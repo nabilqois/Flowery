@@ -19,20 +19,25 @@ class ResultActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val activity = intent.extras?.getString(EXTRA_ACTIVITY)
-        if (activity.equals("MainActivity")) {
-            Log.d("testIntent", "Berhasil")
+        if (activity != null) {
+            Log.d("intentResult", activity)
         }
+        if (activity.equals("MainActivity")) {
+            val kueri = intent.getStringExtra("kueri").toString()
+            Log.d("ResultActivity", kueri)
+            Log.d("testDataIntent", kueri)
+            Toast.makeText(this, kueri, Toast.LENGTH_SHORT).show()
+        } else {
 
-        val kueri = intent.getStringExtra("kueri").toString()
-        Log.d("ResultActivity", kueri)
-        Toast.makeText(this, kueri, Toast.LENGTH_SHORT).show()
+            Log.d("testCamera", "Berhasil")
 
-//        val image = intent.extras?.get(EXTRA_IMAGE) as File
-//        val isBackCamera = intent.getBooleanExtra("isBackCamera", true)
-//
-//        val resultImage = rotateBitmap(BitmapFactory.decodeFile(image.path), isBackCamera)
-//
-//        binding.resultImage.setImageBitmap(resultImage)
+            val image = intent.extras?.get(EXTRA_IMAGE) as File
+            val isBackCamera = intent.getBooleanExtra("isBackCamera", true)
+
+            val resultImage = rotateBitmap(BitmapFactory.decodeFile(image.path), isBackCamera)
+
+            binding.resultImage.setImageBitmap(resultImage)
+        }
     }
 
     companion object {
