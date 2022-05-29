@@ -7,9 +7,11 @@ const tutorialmodel = mongoose.Schema({
     },
     plant: [{
         type: String,
+        required: "How to Plant Id is required",
     }],  
     take_care: [{
         type: String,
+        required: "How to Take Care Id is required",
     }]
 }, {
     timestamps: true

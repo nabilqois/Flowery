@@ -11,7 +11,7 @@ const favouritesmodel = mongoose.Schema({
     },
     timer: {
         type: String,
-        required: "Timer is required",
+        //required: "Timer is required",
     },
     status: {
         type: String,
