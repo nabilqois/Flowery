@@ -21,11 +21,43 @@ const addFlowerHandler = async(request, h) => {
 const getAllFlowersHandler = async(request, h) => {
   try {
       var flowers = await Flower.find().exec();
-      return h.response({
-        error: false,
-        message: "success",
-        result: flowers
-      });
+      const { kueri } = request.query;
+      if (kueri) {
+        const lokal = flowers.filter((f) => f.local_name.toLowerCase().includes(kueri.toLowerCase()));
+        const global = flowers.filter((f) => f.global_name.toLowerCase().includes(kueri.toLowerCase()));
+        const ilmiah = flowers.filter((f) => f.scientific_name.toLowerCase().includes(kueri.toLowerCase()));
+        if (lokal.length > 0) {
+          return h.response({
+            error: false,
+            message: "success",
+            result: lokal
+          });
+        } else if (global.length > 0) {
+          return h.response({
+            error: false,
+            message: "success",
+            result: global
+          });
+        } else if (ilmiah.length > 0) {
+          return h.response({
+            error: false,
+            message: "success",
+            result: ilmiah
+          });
+        } else {
+          return h.response({
+            error: false,
+            message: "Flower Not Found"
+          });
+        }
+      }
+      if (!kueri) {  
+        return h.response({
+          error: false,
+          message: "success",
+          result: flowers
+        });
+      }
   } catch (error) {
       console.log(error)
       return h.response({
@@ -38,6 +70,12 @@ const getAllFlowersHandler = async(request, h) => {
 const getFlowerByIdHandler = async (request, h) => {
   try {
       var flower = await Flower.findById(request.params.id).exec();
+      if (!flower) {
+        return h.response({
+          error: true,
+          message: "FLower Not Found"
+        });  
+      }
       return h.response({
         error: false,
         message: "success",
