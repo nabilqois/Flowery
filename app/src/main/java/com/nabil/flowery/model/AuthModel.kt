@@ -21,19 +21,25 @@ class AuthModel : ViewModel(){
     fun getLoginData(email: String, password: String) {
         ApiConfig.getApiService()
             .login(email, password)
-            .enqueue(object : Callback<LoginResult>{
-                override fun onResponse(call: Call<LoginResult>, response: Response<LoginResult>) {
+            .enqueue(object : Callback<LoginResponse> {
+                override fun onResponse(
+                    call: Call<LoginResponse>,
+                    response: Response<LoginResponse>
+                ) {
                     if (response.isSuccessful) {
-                        _loginData.value = response.body()
+                        _loginData.value = response.body()?.result
                         _isError.value = false
+                    } else {
+                        //TODO
                     }
                 }
 
-                override fun onFailure(call: Call<LoginResult>, t: Throwable) {
-                    Log.d("LoginModel", "onFailure: Terjadi kesalahan")
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                    Log.d("LoginModel", "onFailure: ${t.message}")
                     _isError.value = true
                 }
 
             })
+
     }
 }

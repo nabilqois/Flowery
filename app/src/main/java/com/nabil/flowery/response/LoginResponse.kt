@@ -7,12 +7,12 @@ import kotlinx.parcelize.Parcelize
 data class LoginResponse(
     var error: String? = null,
     var message: String? = null,
-    var loginResult: LoginResult
+    var result: LoginResult
 ): Parcelable
 
 @Parcelize
 data class LoginResult(
-//    var userId: String? = null,
-//    var name: String? = null,
+    var user_id: String? = null,
+    var user_name: String? = null,
     var token: String? = null
 ): Parcelable
