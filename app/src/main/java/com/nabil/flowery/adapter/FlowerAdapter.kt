@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nabil.flowery.databinding.ItemFlowerBinding
 import com.nabil.flowery.response.ListFlower
-import com.nabil.flowery.response.SearchResponse
 
 class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerView.Adapter<FlowerAdapter.ViewHolder>(){
     class ViewHolder(var binding: ItemFlowerBinding) : RecyclerView.ViewHolder(binding.root)

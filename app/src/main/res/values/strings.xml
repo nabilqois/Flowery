@@ -29,4 +29,9 @@
     <string name="email_hint">Enter Your Email Here!</string>
     <string name="pass_hint">Enter Your Password Here!</string>
     <string name="register_title">Don\'t Have an Account ? Come Join Us!</string>
+    <string name="did_you_know">Tahukah Kamu ?</string>
+    <string name="do_not_be_empty">Jangan kosong</string>
+    <string name="home_search">Search</string>
+    <string name="today_trivia">Trivia Hari Ini</string>
+    <string name="today_flower">Flower of The Day</string>
 </resources>

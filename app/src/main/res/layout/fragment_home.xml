@@ -17,7 +17,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Search"
+            android:hint="@string/home_search"
             app:endIconMode="custom"
             app:endIconDrawable="@drawable/ic_search"
             app:boxCornerRadiusTopStart="8dp"
@@ -38,37 +38,39 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/cardView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="91dp"
             android:layout_marginTop="16dp"
-            card_view:cardCornerRadius="8dp"
-            card_view:cardBackgroundColor="@color/primary_2"
-            app:layout_constraintTop_toBottomOf="@+id/layout_search"
+            app:cardBackgroundColor="@color/primary_2"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/layout_search">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:padding="8dp">
 
                 <TextView
                     android:id="@+id/tv_trivia_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Trivia Hari Ini"
+                    android:text="@string/today_trivia"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tv_trivia_desc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_trivia_list"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:transitionName="firstTransitionName"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:text="Deskripsi trivia"
-                    app:layout_constraintTop_toBottomOf="@id/tv_trivia_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_trivia_title"
+                    tools:listitem="@layout/item_trivia" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -95,7 +97,7 @@
                     android:id="@+id/tv_flower_otd_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Flower of The Day"
+                    android:text="@string/today_flower"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 

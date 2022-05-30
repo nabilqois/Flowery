@@ -3,23 +3,35 @@ package com.nabil.flowery.ui.fragments
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.nabil.flowery.R
+import com.nabil.flowery.adapter.FlowerAdapter
+import com.nabil.flowery.adapter.TriviaAdapter
 import com.nabil.flowery.databinding.FragmentHomeBinding
+import com.nabil.flowery.model.TriviaModel
+import com.nabil.flowery.pref.UserPref
+import com.nabil.flowery.response.ListFlower
+import com.nabil.flowery.response.ListTrivia
 import com.nabil.flowery.ui.camera.ResultActivity
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private lateinit var triviaModel: TriviaModel
+    private lateinit var triviaAdapter: TriviaAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
@@ -30,10 +42,20 @@ class HomeFragment : Fragment() {
 
         setTitleTrivia()
 
+        triviaModel = ViewModelProvider(this)[TriviaModel::class.java]
+        triviaAdapter = TriviaAdapter(arrayListOf())
+        binding.rvTriviaList.apply {
+            adapter = triviaAdapter
+            layoutManager = LinearLayoutManager(activity)
+        }
+        setDescTrivia()
+        triviaModel.listTrivia.observe(viewLifecycleOwner) { listTrivia -> setDescTriviaFlower(listTrivia) }
+
         val kueri = binding.edtSearch.text
         binding.layoutSearch.setEndIconOnClickListener {
             if (kueri!!.isEmpty()) {
-                Toast.makeText(context, "Jangan kosong", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, getString(R.string.do_not_be_empty), Toast.LENGTH_SHORT)
+                    .show()
             } else {
 //                Toast.makeText(context, kueri, Toast.LENGTH_SHORT).show()
             }
@@ -47,16 +69,21 @@ class HomeFragment : Fragment() {
     }
 
     private fun setTitleTrivia() {
-        binding.tvTriviaTitle.text = "Tahukah Kamu ?"
+        binding.tvTriviaTitle.text = getString(R.string.did_you_know)
     }
 
     private fun setDescTrivia() {
-        binding.tvTriviaDesc.text = "Bunga mawar memiliki ..."
+        val token = activity?.let { UserPref(it).getResponseLogin() }
+        token?.let { triviaModel.getFlowerTrivia(it)}
+    }
+
+    private fun setDescTriviaFlower(trivia: List<ListTrivia>) {
+        triviaAdapter.setTrivia(trivia)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
-
 }
+
