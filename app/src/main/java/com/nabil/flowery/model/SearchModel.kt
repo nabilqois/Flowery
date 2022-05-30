@@ -27,18 +27,24 @@ class SearchModel: ViewModel() {
                     response: Response<SearchResponse>
                 ) {
                     if (response.isSuccessful) {
-                        Log.d("SearchModel", "getListFLower ${response.body()}")
-                        Log.d("SearchModel", "token :  $token")
-                        _listFlower.value = response.body()?.result
+
                         _isError.value = false
+
+                        Log.d("SearchModel", "getListFLower ${response.body()}")
+                        Log.d("SearchModel", "successful :  $token")
+
+                        _listFlower.value = response.body()?.result
+                        Log.d("listFlower", "result :  ${response.body()?.result}")
+
                     } else {
                         _isError.value = true
-                        Log.d("SearchModel", "token :  $token")
+                        Log.d("SearchModel", "not success :  $token")
                     }
                 }
 
                 override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
-                    Log.d("Search Failure", t.message.toString())
+                    _isError.value = true
+                    Log.d("SearchModel", "onFailure: ${t.message.toString()}")
                 }
 
             })
