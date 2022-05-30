@@ -18,6 +18,9 @@ class SearchModel: ViewModel() {
     private val _isError = MutableLiveData<Boolean>()
     val isError: LiveData<Boolean> = _isError
 
+    private val _message = MutableLiveData<String>()
+    val message: LiveData<String> = _message
+
     fun getListFlower(token: String, kueri: String) {
         ApiConfig.getApiService()
             .getListFlower(token, kueri)
@@ -30,11 +33,14 @@ class SearchModel: ViewModel() {
 
                         _isError.value = false
 
+                        _message.value = response.body()?.message!!.toString()
+                        Log.d("SearchModel", "message: ${response.body()?.message!!.toString()}")
+
                         Log.d("SearchModel", "getListFLower ${response.body()}")
                         Log.d("SearchModel", "successful :  $token")
 
                         _listFlower.value = response.body()?.result
-                        Log.d("listFlower", "result :  ${response.body()?.result}")
+                        Log.d("SearchModel", "result :  ${response.body()?.result}")
 
                     } else {
                         _isError.value = true

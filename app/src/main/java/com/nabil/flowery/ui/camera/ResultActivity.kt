@@ -43,15 +43,31 @@ class ResultActivity : AppCompatActivity() {
             Log.d("testDataIntent", kueri)
             Toast.makeText(this, kueri, Toast.LENGTH_SHORT).show()
 
-            setRecycleView()
+//            setRecycleView()
             getListFlower(kueri)
 
-            searchModel.listFlower.observe(this) { listFlower ->
-                setListFlower(listFlower)
-                if (flowerAdapter.itemCount == 0) {
+            searchModel.message.observe(this) {
+                Log.d("ResultActivity", it)
+                if (it.equals("success")) {
+                    setRecycleView()
+                    searchModel.listFlower.observe(this) { listFlower ->
+                        setListFlower(listFlower)
+                        if (flowerAdapter.itemCount == 0) {
+                            Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                } else {
+                    binding.tvOutput.text = "Hasil tidak ditemukan"
                     Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
                 }
             }
+
+//            searchModel.listFlower.observe(this) { listFlower ->
+//                setListFlower(listFlower)
+//                if (flowerAdapter.itemCount == 0) {
+//                    Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
+//                }
+//            }
 
         } else {
 
@@ -69,6 +85,10 @@ class ResultActivity : AppCompatActivity() {
             setRecycleView()
             Log.d("Result", "Result: $result")
             getListFlower(result)
+
+            searchModel.message.observe(this) {
+                Log.d("ResultActivity", it)
+            }
 
             searchModel.isError.observe(this) {isError ->
                 // mungkin ini bisa diubah lagi implementasinya
