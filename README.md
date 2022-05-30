@@ -11,3 +11,4 @@
 * Added RegisterActivity
 * Added RegisterActivity Dummy Logic
 * Added RegisterActivity with Flowery API
+* Added Trivia Flower with Flowery API
