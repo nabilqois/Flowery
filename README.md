@@ -6,9 +6,10 @@
 * Added Result Activity
 * Added Camera Utils
 * Added User Pref (Save Token and Login State)
-* Added LoginActivity
+* Added LoginActivity 
 * Added LoginActivity Dummy Logic
 * Added RegisterActivity
 * Added RegisterActivity Dummy Logic
+* Added LoginActivity with Flowery API
 * Added RegisterActivity with Flowery API
 * Added Trivia Flower with Flowery API
