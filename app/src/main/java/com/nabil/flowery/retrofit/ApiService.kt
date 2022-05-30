@@ -22,7 +22,7 @@ interface ApiService {
         @Field("password") password:String
     ):Call<RegisterResponse>
 
-    @GET("/flowers/{id}")
+    @GET("/flowers")
     fun getListFlower(
         @Header("Authorization") auth: String,
         @Query("kueri") kueri: String

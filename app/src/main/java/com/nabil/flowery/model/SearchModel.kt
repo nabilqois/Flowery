@@ -13,7 +13,7 @@ import retrofit2.Response
 
 class SearchModel: ViewModel() {
     private val _listFlower = MutableLiveData<List<ListFlower>>()
-    val loginData: LiveData<List<ListFlower>> = _listFlower
+    val listFlower: LiveData<List<ListFlower>> = _listFlower
 
     private val _isError = MutableLiveData<Boolean>()
     val isError: LiveData<Boolean> = _isError
@@ -28,10 +28,12 @@ class SearchModel: ViewModel() {
                 ) {
                     if (response.isSuccessful) {
                         Log.d("SearchModel", "getListFLower ${response.body()}")
+                        Log.d("SearchModel", "token :  $token")
                         _listFlower.value = response.body()?.result
                         _isError.value = false
                     } else {
                         _isError.value = true
+                        Log.d("SearchModel", "token :  $token")
                     }
                 }
 

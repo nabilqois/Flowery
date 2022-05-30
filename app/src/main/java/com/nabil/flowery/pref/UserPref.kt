@@ -14,11 +14,9 @@ class UserPref(context: Context) {
         editor.apply()
     }
 
-    fun getResponseLogin(): LoginResult {
-        val data = LoginResult()
-
-        data.token = preferences.getString(TOKEN, "")
-        return data
+    fun getResponseLogin(): String {
+        val data: String? = preferences.getString(TOKEN, "")
+        return data.toString()
     }
 
     fun isLoggedIn(): Boolean {
