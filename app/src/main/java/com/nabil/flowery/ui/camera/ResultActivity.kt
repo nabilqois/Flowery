@@ -62,12 +62,12 @@ class ResultActivity : AppCompatActivity() {
                 }
             }
 
-//            searchModel.listFlower.observe(this) { listFlower ->
-//                setListFlower(listFlower)
-//                if (flowerAdapter.itemCount == 0) {
-//                    Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
-//                }
-//            }
+            searchModel.isError.observe(this) {isError ->
+                if (isError) {
+                    Toast.makeText(this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                }
+            }
+
 
         } else {
 
@@ -82,26 +82,28 @@ class ResultActivity : AppCompatActivity() {
 
             outputGenerator(resultImage)
 
-            setRecycleView()
             Log.d("Result", "Result: $result")
             getListFlower(result)
 
-            searchModel.message.observe(this) {
-                Log.d("ResultActivity", it)
-            }
+            searchModel.message.observe(this) { message ->
+                Log.d("ResultActivity", message)
 
-            searchModel.isError.observe(this) {isError ->
-                // mungkin ini bisa diubah lagi implementasinya
-                if (isError) {
-                    Toast.makeText(this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
-                } else {
-                    // searchModel ini tadinya sendiri , tidak didalam if
+                if (message.equals("success")) {
+                    setRecycleView()
                     searchModel.listFlower.observe(this) { listFlower ->
                         setListFlower(listFlower)
                         if (flowerAdapter.itemCount == 0) {
                             Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
                         }
                     }
+                } else {
+                    Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            searchModel.isError.observe(this) {isError ->
+                if (isError) {
+                    Toast.makeText(this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
                 }
             }
 
