@@ -13,3 +13,4 @@
 * Added LoginActivity with Flowery API
 * Added RegisterActivity with Flowery API
 * Added Trivia Flower with Flowery API
+* Fixed ResultActivity with Tensor Model
