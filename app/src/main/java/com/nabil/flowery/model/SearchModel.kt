@@ -18,6 +18,9 @@ class SearchModel: ViewModel() {
     private val _isError = MutableLiveData<Boolean>()
     val isError: LiveData<Boolean> = _isError
 
+    private val _message = MutableLiveData<String>()
+    val message: LiveData<String> = _message
+
     fun getListFlower(token: String, kueri: String) {
         ApiConfig.getApiService()
             .getListFlower(token, kueri)
@@ -27,18 +30,27 @@ class SearchModel: ViewModel() {
                     response: Response<SearchResponse>
                 ) {
                     if (response.isSuccessful) {
-                        Log.d("SearchModel", "getListFLower ${response.body()}")
-                        Log.d("SearchModel", "token :  $token")
-                        _listFlower.value = response.body()?.result
+
                         _isError.value = false
+
+                        _message.value = response.body()?.message!!.toString()
+                        Log.d("SearchModel", "message: ${response.body()?.message!!.toString()}")
+
+                        Log.d("SearchModel", "getListFLower ${response.body()}")
+                        Log.d("SearchModel", "successful :  $token")
+
+                        _listFlower.value = response.body()?.result
+                        Log.d("SearchModel", "result :  ${response.body()?.result}")
+
                     } else {
                         _isError.value = true
-                        Log.d("SearchModel", "token :  $token")
+                        Log.d("SearchModel", "not success :  $token")
                     }
                 }
 
                 override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
-                    Log.d("Search Failure", t.message.toString())
+                    _isError.value = true
+                    Log.d("SearchModel", "onFailure: ${t.message.toString()}")
                 }
 
             })

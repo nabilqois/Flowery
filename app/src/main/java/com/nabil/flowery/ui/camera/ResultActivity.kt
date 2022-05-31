@@ -1,5 +1,6 @@
 package com.nabil.flowery.ui.camera
 
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,10 +10,12 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nabil.flowery.adapter.FlowerAdapter
 import com.nabil.flowery.databinding.ActivityResultBinding
+import com.nabil.flowery.ml.Model
 import com.nabil.flowery.model.SearchModel
 import com.nabil.flowery.pref.UserPref
 import com.nabil.flowery.response.ListFlower
 import com.nabil.flowery.util.rotateBitmap
+import org.tensorflow.lite.support.image.TensorImage
 import java.io.File
 
 class ResultActivity : AppCompatActivity() {
@@ -21,6 +24,7 @@ class ResultActivity : AppCompatActivity() {
     private val searchModel: SearchModel by viewModels()
 
     private lateinit var flowerAdapter: FlowerAdapter
+    private lateinit var result: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,15 +43,31 @@ class ResultActivity : AppCompatActivity() {
             Log.d("testDataIntent", kueri)
             Toast.makeText(this, kueri, Toast.LENGTH_SHORT).show()
 
-            setRecycleView()
+//            setRecycleView()
             getListFlower(kueri)
 
-            searchModel.listFlower.observe(this) { listFlower ->
-                setListFlower(listFlower)
-                if (flowerAdapter.itemCount == 0) {
+            searchModel.message.observe(this) {
+                Log.d("ResultActivity", it)
+                if (it.equals("success")) {
+                    setRecycleView()
+                    searchModel.listFlower.observe(this) { listFlower ->
+                        setListFlower(listFlower)
+                        if (flowerAdapter.itemCount == 0) {
+                            Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                } else {
+                    binding.tvOutput.text = "Hasil tidak ditemukan"
                     Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
                 }
             }
+
+            searchModel.isError.observe(this) {isError ->
+                if (isError) {
+                    Toast.makeText(this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                }
+            }
+
 
         } else {
 
@@ -59,10 +79,39 @@ class ResultActivity : AppCompatActivity() {
             val resultImage = rotateBitmap(BitmapFactory.decodeFile(image.path), isBackCamera)
 
             binding.resultImage.setImageBitmap(resultImage)
+
+            outputGenerator(resultImage)
+
+            Log.d("Result", "Result: $result")
+            getListFlower(result)
+
+            searchModel.message.observe(this) { message ->
+                Log.d("ResultActivity", message)
+
+                if (message.equals("success")) {
+                    setRecycleView()
+                    searchModel.listFlower.observe(this) { listFlower ->
+                        setListFlower(listFlower)
+                        if (flowerAdapter.itemCount == 0) {
+                            Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                } else {
+                    Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            searchModel.isError.observe(this) {isError ->
+                if (isError) {
+                    Toast.makeText(this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+
         }
     }
 
-    fun getListFlower(query: String) {
+    private fun getListFlower(query: String) {
         val token = UserPref(this).getResponseLogin()
         Log.d("getToken", token)
         searchModel.getListFlower(token, query)
@@ -80,6 +129,33 @@ class ResultActivity : AppCompatActivity() {
 
     private fun setListFlower(flowers: List<ListFlower>) {
         flowerAdapter.setListFlower(flowers)
+    }
+
+    //Classifying Image with ML
+    private fun outputGenerator(bitmap: Bitmap) {
+        //Declaring TFLite model variable
+        val model = Model.newInstance(this)
+
+        // Converting Bitmap to tensorflow image
+        val newBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true)
+        val image = TensorImage.fromBitmap(bitmap)
+
+        // Runs model inference and gets result.
+        val outputs = model.process(image).probabilityAsCategoryList.apply {
+            sortByDescending { it.score }
+        }
+
+        //getting result from the one that have high probability
+        val probability = outputs[0]
+        result = probability.label
+
+
+        //Setting output text
+        binding.tvOutput.text = probability.label
+        Log.i("TAG", "outputGenerator: $probability")
+
+        // Releases model resources if no longer used.
+        model.close()
     }
 
     companion object {
