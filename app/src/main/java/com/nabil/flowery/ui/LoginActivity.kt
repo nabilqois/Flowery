@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.nabil.flowery.R
 import com.nabil.flowery.databinding.ActivityLoginBinding
 import com.nabil.flowery.model.AuthModel
 import com.nabil.flowery.pref.UserPref
@@ -27,16 +28,16 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.passBox.text.toString()
 
             if (email.isEmpty()) {
-                binding.emailBox.error = "Email wajib diisi"
+                binding.emailBox.error = getString(R.string.email_here)
             } else if (password.isEmpty()) {
-                binding.passBox.error = "Password wajib diisi"
+                binding.passBox.error = getString(R.string.password_here)
             }
 
             authModel.getLoginData(email, password)
 
             authModel.isError.observe(this) { isError ->
                 if (isError) {
-                    Toast.makeText(this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.mistake_found), Toast.LENGTH_SHORT).show()
                 } else {
                     val loginResponse = authModel.loginData.value
                     UserPref(this).setResponseLogin(loginResponse!!)
