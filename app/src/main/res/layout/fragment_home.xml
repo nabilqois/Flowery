@@ -78,20 +78,19 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/cardView2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="131dp"
             android:layout_marginTop="16dp"
-            card_view:cardCornerRadius="8dp"
-            card_view:cardBackgroundColor="@color/primary_2"
-            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:cardBackgroundColor="@color/primary_2"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:padding="8dp">
 
                 <TextView
@@ -102,6 +101,17 @@
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_trivia_flowerOfTheDay"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:transitionName="firstTransitionName"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_flower_otd_title"
+                    tools:listitem="@layout/item_flowerday" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

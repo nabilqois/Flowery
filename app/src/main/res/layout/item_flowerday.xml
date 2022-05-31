@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_flower"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    >
+
+    <ImageView
+        android:id="@+id/img_flower"
+        android:layout_width="122dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/tv_flower_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/img_flower"
+        app:layout_constraintStart_toEndOf="@+id/img_flower"
+        app:layout_constraintTop_toTopOf="@+id/img_flower"
+        app:layout_constraintVertical_bias="0.114"
+        tools:text="Nama Bunga" />
+
+    <TextView
+        android:id="@+id/tv_flower_name_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_flower"
+        app:layout_constraintStart_toEndOf="@+id/img_flower"
+        app:layout_constraintTop_toBottomOf="@id/tv_flower_name"
+        tools:text="username" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

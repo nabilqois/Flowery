@@ -4,8 +4,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nabil.flowery.databinding.FragmentHomeBinding
-import com.nabil.flowery.response.ListFlower
 import com.nabil.flowery.response.ListTrivia
 import com.nabil.flowery.response.TriviaResponse
 import com.nabil.flowery.retrofit.ApiConfig

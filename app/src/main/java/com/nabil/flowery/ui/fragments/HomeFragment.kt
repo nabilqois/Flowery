@@ -6,15 +6,21 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nabil.flowery.R
+import com.nabil.flowery.adapter.FlowerAdapter
+import com.nabil.flowery.adapter.FlowerDayAdapter
 import com.nabil.flowery.adapter.TriviaAdapter
 import com.nabil.flowery.databinding.FragmentHomeBinding
+import com.nabil.flowery.model.FlowerModel
 import com.nabil.flowery.model.TriviaModel
 import com.nabil.flowery.pref.UserPref
+import com.nabil.flowery.response.FlowerDay
+import com.nabil.flowery.response.ListFlower
 import com.nabil.flowery.response.ListTrivia
 import com.nabil.flowery.ui.camera.ResultActivity
 
@@ -24,6 +30,8 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var triviaModel: TriviaModel
     private lateinit var triviaAdapter: TriviaAdapter
+    private lateinit var flowerDayAdapter: FlowerDayAdapter
+    private lateinit var flowerModel:FlowerModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,15 +46,24 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setTitleTrivia()
-
+        flowerModel = ViewModelProvider(this)[FlowerModel::class.java]
+        flowerDayAdapter = FlowerDayAdapter(arrayListOf())
         triviaModel = ViewModelProvider(this)[TriviaModel::class.java]
         triviaAdapter = TriviaAdapter(arrayListOf())
+
         binding.rvTriviaList.apply {
             adapter = triviaAdapter
             layoutManager = LinearLayoutManager(activity)
         }
-        setDescTrivia()
+
+        binding.rvTriviaFlowerOfTheDay.apply {
+            adapter = flowerDayAdapter
+            layoutManager = LinearLayoutManager(activity)
+        }
+
+        setToken()
         triviaModel.listTrivia.observe(viewLifecycleOwner) { listTrivia -> setDescTriviaFlower(listTrivia) }
+        flowerModel.listFlower.observe(viewLifecycleOwner) { listFlower -> setFlowerDay(listFlower) }
 
         val kueri = binding.edtSearch.text
         binding.layoutSearch.setEndIconOnClickListener {
@@ -65,18 +82,22 @@ class HomeFragment : Fragment() {
         }
     }
 
-
     private fun setTitleTrivia() {
         binding.tvTriviaTitle.text = getString(R.string.did_you_know)
     }
 
-    private fun setDescTrivia() {
+    private fun setToken() {
         val token = activity?.let { UserPref(it).getResponseLogin() }
         token?.let { triviaModel.getFlowerTrivia(it)}
+        token?.let { flowerModel.getFlower(it) }
     }
 
     private fun setDescTriviaFlower(trivia: List<ListTrivia>) {
         triviaAdapter.setTrivia(trivia)
+    }
+
+    private fun setFlowerDay(flower: List<FlowerDay>){
+        flowerDayAdapter.setFlowerOfTheDay(flower)
     }
 
     override fun onDestroy() {

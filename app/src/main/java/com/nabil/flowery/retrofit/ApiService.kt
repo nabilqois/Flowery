@@ -1,9 +1,6 @@
 package com.nabil.flowery.retrofit
 
-import com.nabil.flowery.response.SearchResponse
-import com.nabil.flowery.response.LoginResponse
-import com.nabil.flowery.response.RegisterResponse
-import com.nabil.flowery.response.TriviaResponse
+import com.nabil.flowery.response.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -33,4 +30,9 @@ interface ApiService {
     fun getTrivia(
         @Header("Authorization") auth: String
     ) : Call<TriviaResponse>
+
+    @GET("/flowers")
+    fun getFlowerOfTheDay(
+        @Header("Authorization") auth: String
+    ) : Call<FlowerDayResponse>
 }
