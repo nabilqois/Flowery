@@ -34,4 +34,14 @@
     <string name="home_search">Search</string>
     <string name="today_trivia">Trivia Hari Ini</string>
     <string name="today_flower">Flower of The Day</string>
+    <string name="not_found">Hasil tidak ditemukan</string>
+    <string name="out">Keluar</string>
+    <string name="profileimage">profileImage</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_favorite">Favorite</string>
+    <string name="nav_notification">Notification</string>
+    <string name="nav_profile">Profile</string>
+    <string name="mistake_found">Terjadi kesalahan</string>
+    <string name="password_here">Password wajib diisi</string>
+    <string name="email_here">Email wajib diisi</string>
 </resources>

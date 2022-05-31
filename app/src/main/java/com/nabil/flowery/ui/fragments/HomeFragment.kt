@@ -6,18 +6,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nabil.flowery.R
-import com.nabil.flowery.adapter.FlowerAdapter
 import com.nabil.flowery.adapter.TriviaAdapter
 import com.nabil.flowery.databinding.FragmentHomeBinding
 import com.nabil.flowery.model.TriviaModel
 import com.nabil.flowery.pref.UserPref
-import com.nabil.flowery.response.ListFlower
 import com.nabil.flowery.response.ListTrivia
 import com.nabil.flowery.ui.camera.ResultActivity
 
@@ -67,6 +64,7 @@ class HomeFragment : Fragment() {
             startActivity(toResultActivity)
         }
     }
+
 
     private fun setTitleTrivia() {
         binding.tvTriviaTitle.text = getString(R.string.did_you_know)

@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nabil.flowery.R
 import com.nabil.flowery.adapter.FlowerAdapter
 import com.nabil.flowery.databinding.ActivityResultBinding
 import com.nabil.flowery.ml.Model
@@ -53,12 +54,12 @@ class ResultActivity : AppCompatActivity() {
                     searchModel.listFlower.observe(this) { listFlower ->
                         setListFlower(listFlower)
                         if (flowerAdapter.itemCount == 0) {
-                            Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, getString(R.string.not_found), Toast.LENGTH_LONG).show()
                         }
                     }
                 } else {
-                    binding.tvOutput.text = "Hasil tidak ditemukan"
-                    Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
+                    binding.tvOutput.text = getString(R.string.not_found)
+                    Toast.makeText(this, getString(R.string.not_found), Toast.LENGTH_LONG).show()
                 }
             }
 
@@ -93,11 +94,11 @@ class ResultActivity : AppCompatActivity() {
                     searchModel.listFlower.observe(this) { listFlower ->
                         setListFlower(listFlower)
                         if (flowerAdapter.itemCount == 0) {
-                            Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, getString(R.string.not_found), Toast.LENGTH_LONG).show()
                         }
                     }
                 } else {
-                    Toast.makeText(this, "Hasil Tidak Ditemukan", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, getString(R.string.not_found), Toast.LENGTH_LONG).show()
                 }
             }
 
