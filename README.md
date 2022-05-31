@@ -15,3 +15,4 @@
 * Added Trivia Flower with Flowery API
 * Added Result Activity with Machine Learning Image Learning
 * Fixed ResultActivity with Tensor Model
+* Added Profile Fragment with Basic Details
