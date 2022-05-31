@@ -28,6 +28,8 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setProfileName()
+
         binding.btnLogout.setOnClickListener {
             UserPref(requireContext()).logout()
             val toLoginActivity = Intent(context, LoginActivity::class.java)
@@ -35,6 +37,11 @@ class ProfileFragment : Fragment() {
             activity?.finish()
 
         }
+    }
+
+    private fun setProfileName(){
+        val name = activity?.let { UserPref(it).getResponseUserName() }
+        binding.profileName.text = name.toString()
     }
 
 }
