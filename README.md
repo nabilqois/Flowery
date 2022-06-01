@@ -16,3 +16,4 @@
 * Added Result Activity with Machine Learning Image Learning
 * Fixed ResultActivity with Tensor Model
 * Added Profile Fragment with Basic Details
+* Added Flower of The Day with Flowery API
