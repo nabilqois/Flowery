@@ -17,3 +17,4 @@
 * Fixed ResultActivity with Tensor Model
 * Added Profile Fragment with Basic Details
 * Added Flower of The Day with Flowery API
+* Adjusting Register Layout
