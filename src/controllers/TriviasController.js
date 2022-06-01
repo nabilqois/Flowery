@@ -24,7 +24,7 @@ const getAllTriviasHandler = async(request, h) => {
       return h.response({
         error: false,
         message: "success",
-        result: trivias
+        result: trivias.sort(function (a, b) {return Math.random() - 0.5;})
       });
   } catch (error) {
       console.log(error)
