@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:padding="16dp"
     tools:context=".ui.LoginActivity">
 
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView2"
-        android:layout_width="398dp"
-        android:layout_height="239dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="384dp"
+        android:layout_height="215dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/logreg_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginTitle" />
 
@@ -36,11 +37,11 @@
         android:id="@+id/textEmailBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="16dp"
         android:text="@string/login_email"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@+id/emailBox"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/shapeableImageView2" />
 
     <TextView
         android:id="@+id/textPassBox"
@@ -79,14 +80,15 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_width="84dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="84dp"
         android:text="@string/login"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         app:backgroundTint="@color/primary_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shapeableImageView2" />
 
@@ -97,11 +99,14 @@
         android:layout_marginTop="20dp"
         android:text="@string/register"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         app:backgroundTint="@color/primary_2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
