@@ -53,7 +53,7 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <receiver android:name=".AlarmReceiver" android:enabled="true">
+        <receiver android:name=".receiver.AlarmReceiver" android:enabled="true">
         </receiver>
     </application>
 

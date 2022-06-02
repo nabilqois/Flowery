@@ -15,7 +15,7 @@ import android.widget.Button
 import android.widget.TimePicker
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.nabil.flowery.AlarmReceiver
+import com.nabil.flowery.receiver.AlarmReceiver
 import com.nabil.flowery.databinding.FragmentNotificationBinding
 import java.util.*
 

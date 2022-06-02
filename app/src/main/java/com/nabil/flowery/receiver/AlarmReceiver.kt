@@ -1,4 +1,4 @@
-package com.nabil.flowery
+package com.nabil.flowery.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context
