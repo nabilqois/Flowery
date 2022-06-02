@@ -17,4 +17,5 @@
 * Fixed ResultActivity with Tensor Model
 * Added Profile Fragment with Basic Details
 * Added Flower of The Day with Flowery API
-* Adjusting Register Layout
+* Fixed RegisterLayout (Zoomed in with real device)
+* Added Alarm/Reminder Function (No Multiple Instances and Using Toast instead of Notification)
