@@ -10,6 +10,12 @@ import com.nabil.flowery.response.ListFlower
 class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerView.Adapter<FlowerAdapter.ViewHolder>(){
     class ViewHolder(var binding: ItemFlowerBinding) : RecyclerView.ViewHolder(binding.root)
 
+    private lateinit var onItemClickCallback: OnItemClickCallBack
+
+    fun setOnItemClickCallback(onItemClickCallBack: OnItemClickCallBack) {
+        this.onItemClickCallback = onItemClickCallBack
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemFlowerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
@@ -23,6 +29,9 @@ class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerVie
             .load(result.images)
             .into(holder.binding.imgFlower)
 
+        holder.itemView.setOnClickListener{
+            onItemClickCallback.onItemClicked(listFlower[holder.adapterPosition])
+        }
     }
 
     override fun getItemCount(): Int = listFlower.size
@@ -31,5 +40,9 @@ class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerVie
         listFlower.clear()
         listFlower.addAll(flower)
         notifyDataSetChanged()
+    }
+
+    interface OnItemClickCallBack {
+        fun onItemClicked(data: ListFlower)
     }
 }
