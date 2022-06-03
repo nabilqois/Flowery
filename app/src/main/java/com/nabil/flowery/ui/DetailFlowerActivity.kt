@@ -25,6 +25,9 @@ class DetailFlowerActivity : AppCompatActivity() {
                 .load(detail.images)
 //                .circleCrop()
                 .into(imgFlower)
+
+            tvFlowerName.text = detail.local_name
+            tvFlowerName2.text = detail.global_name
         }
     }
 
