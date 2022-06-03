@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -65,21 +66,34 @@ class HomeFragment : Fragment() {
         triviaModel.listTrivia.observe(viewLifecycleOwner) { listTrivia -> setDescTriviaFlower(listTrivia) }
         flowerModel.listFlower.observe(viewLifecycleOwner) { listFlower -> setFlowerDay(listFlower) }
 
-        val kueri = binding.edtSearch.text
         binding.layoutSearch.setEndIconOnClickListener {
-            if (kueri!!.isEmpty()) {
-                Toast.makeText(context, getString(R.string.do_not_be_empty), Toast.LENGTH_SHORT)
-                    .show()
-            } else {
-//                Toast.makeText(context, kueri, Toast.LENGTH_SHORT).show()
-            }
-            Log.d("HomeFragment", kueri.toString())
+            val kueri = binding.edtSearch.text.toString()
 
+            actionSearch(kueri)
+
+        }
+
+        binding.edtSearch.setOnEditorActionListener{_, actionId, _ ->
+            val kueri = binding.edtSearch.text.toString()
+
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                actionSearch(kueri)
+            }
+            true
+        }
+    }
+
+    private fun actionSearch(query: String) {
+        if (query == "") {
+            Toast.makeText(context, getString(R.string.do_not_be_empty), Toast.LENGTH_SHORT)
+                .show()
+        } else {
             val toResultActivity = Intent(activity, ResultActivity::class.java)
-            toResultActivity.putExtra("kueri", kueri.toString())
+            toResultActivity.putExtra("kueri", query)
             toResultActivity.putExtra(ResultActivity.EXTRA_ACTIVITY, "MainActivity")
             startActivity(toResultActivity)
         }
+        Log.d("HomeFragment", query)
     }
 
     private fun setTitleTrivia() {
