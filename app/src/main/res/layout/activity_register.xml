@@ -10,7 +10,7 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:scaleType="centerCrop"
@@ -88,12 +88,12 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nameBox"
             style="@style/Widget.AppCompat.EditText"
-            android:layout_width="368dp"
-            android:layout_height="49dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
-            android:textColorHint="@color/primary_2"
             android:hint="@string/register_name_hint"
             android:textColor="@color/primary_2"
+            android:textColorHint="@color/primary_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="parent"
@@ -102,8 +102,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailBox"
             style="@style/Widget.AppCompat.EditText"
-            android:layout_width="368dp"
-            android:layout_height="49dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
             android:hint="@string/email_hint"
             android:textColor="@color/primary_2"
@@ -116,8 +116,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passBox"
             style="@style/Widget.AppCompat.EditText"
-            android:layout_width="368dp"
-            android:layout_height="49dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
             android:hint="@string/pass_hint"
             android:inputType="textPassword"

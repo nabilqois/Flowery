@@ -10,13 +10,15 @@
     <TimePicker
         android:id="@+id/TimePicker"
         android:layout_width="match_parent"
+        android:timePickerMode="spinner"
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/s"
-        android:layout_width="match_parent"
+        android:id="@+id/setAlarmButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hi"/>
+        android:layout_gravity="center"
+        android:text="@string/set_alarm"/>
 
 
 </LinearLayout>

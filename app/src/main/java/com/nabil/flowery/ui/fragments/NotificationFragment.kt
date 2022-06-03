@@ -27,7 +27,6 @@ class NotificationFragment : Fragment() {
     private lateinit var button: Button
 
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentNotificationBinding.inflate(inflater, container, false)
         return binding.root
@@ -36,7 +35,7 @@ class NotificationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         timePicker = binding.TimePicker
-        button = binding.s
+        button = binding.setAlarmButton
         val calendar: Calendar = Calendar.getInstance()
         timePicker.currentHour = calendar.get(Calendar.HOUR_OF_DAY)
         timePicker.currentMinute = calendar.get(Calendar.MINUTE)
@@ -51,9 +50,14 @@ class NotificationFragment : Fragment() {
             private fun setAlarm(targetcal: Calendar) {
                 Toast.makeText(context, "Alarm is set", Toast.LENGTH_LONG).show()
                 val intent = Intent(context!!.applicationContext, AlarmReceiver::class.java)
-                val pendingIntent = PendingIntent.getBroadcast(context!!.applicationContext, 0, intent, 0)
+                val pendingIntent = PendingIntent.getBroadcast(
+                    context!!.applicationContext,
+                    0,
+                    intent,
+                    0
+                )
                 val alarmmanager = activity!!.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-                alarmmanager[AlarmManager.RTC_WAKEUP, targetcal.getTimeInMillis()] = pendingIntent
+                alarmmanager[AlarmManager.RTC_WAKEUP, targetcal.timeInMillis] = pendingIntent
             }
         })
 
