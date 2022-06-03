@@ -19,3 +19,4 @@
 * Added Flower of The Day with Flowery API
 * Fixed RegisterLayout (Zoomed in with real device)
 * Added Alarm/Reminder Function (No Multiple Instances and Using Toast instead of Notification)
+* Added Search Function on Keyboard HomeFrgament

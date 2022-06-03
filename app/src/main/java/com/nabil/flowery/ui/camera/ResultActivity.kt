@@ -1,5 +1,6 @@
 package com.nabil.flowery.ui.camera
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,8 @@ import com.nabil.flowery.ml.Model
 import com.nabil.flowery.model.SearchModel
 import com.nabil.flowery.pref.UserPref
 import com.nabil.flowery.response.ListFlower
+import com.nabil.flowery.response.SearchResponse
+import com.nabil.flowery.ui.DetailFlowerActivity
 import com.nabil.flowery.util.rotateBitmap
 import org.tensorflow.lite.support.image.TensorImage
 import java.io.File
@@ -53,6 +56,7 @@ class ResultActivity : AppCompatActivity() {
                     setRecycleView()
                     searchModel.listFlower.observe(this) { listFlower ->
                         setListFlower(listFlower)
+                        Log.d("ResultActivity", "ListFlower: ${listFlower[0]}")
                         if (flowerAdapter.itemCount == 0) {
                             Toast.makeText(this, getString(R.string.not_found), Toast.LENGTH_LONG).show()
                         }
@@ -125,11 +129,23 @@ class ResultActivity : AppCompatActivity() {
                 LinearLayoutManager(applicationContext)
             adapter = flowerAdapter
 
+            flowerAdapter.setOnItemClickCallback(object : FlowerAdapter.OnItemClickCallBack {
+                override fun onItemClicked(data: ListFlower) {
+                    Log.d("onItemClicked", "its clicked")
+                    showSelectedFlower(data)
+                }
+            })
         }
     }
 
     private fun setListFlower(flowers: List<ListFlower>) {
         flowerAdapter.setListFlower(flowers)
+    }
+
+    private fun showSelectedFlower(data: ListFlower) {
+        val toDetailFlower = Intent(this, DetailFlowerActivity::class.java)
+        toDetailFlower.putExtra(DetailFlowerActivity.EXTRA_DETAIL, data)
+        startActivity(toDetailFlower)
     }
 
     //Classifying Image with ML
