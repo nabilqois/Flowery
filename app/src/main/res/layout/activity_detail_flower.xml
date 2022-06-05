@@ -39,8 +39,9 @@
         app:layout_constraintTop_toBottomOf="@id/tv_flower_name"
         app:layout_constraintStart_toStartOf="parent"
         />
+<!--    style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+    <com.google.android.material.button.MaterialButton
 
-    <Button
         android:id="@+id/btn_rawat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,8 +49,13 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="Rawat Bunga"
+        android:textColor="@color/text_color"
         android:textAllCaps="false"
+        app:icon="@drawable/ic_bookmark_outline"
+        app:iconGravity="textStart"
         android:backgroundTint="@color/primary_2"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

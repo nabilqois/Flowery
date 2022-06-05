@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    card_view:strokeColor="@color/black"
+    card_view:strokeWidth="1dp"
+    card_view:cardCornerRadius="8dp"
+    android:id="@+id/item_flower2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:layout_margin="8dp"
+        >
+
+        <ImageView
+            android:id="@+id/img_flower"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            tools:src="@drawable/ic_image"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_flower_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Test"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            card_view:layout_constraintStart_toEndOf="@id/img_flower"
+            card_view:layout_constraintTop_toTopOf="@id/img_flower" />
+
+        <TextView
+            android:id="@+id/tv_flower_name_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Test 2"
+            android:textSize="16sp"
+            card_view:layout_constraintStart_toEndOf="@id/img_flower"
+            card_view:layout_constraintBottom_toBottomOf="@id/img_flower" />
+
+        <ImageButton
+            android:id="@+id/btn_fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bookmark"
+            android:background="@null"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

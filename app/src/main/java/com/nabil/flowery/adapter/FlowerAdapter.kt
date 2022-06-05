@@ -2,13 +2,18 @@ package com.nabil.flowery.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.nabil.flowery.databinding.ItemFlower2Binding
 import com.nabil.flowery.databinding.ItemFlowerBinding
 import com.nabil.flowery.response.ListFlower
+import com.nabil.flowery.ui.camera.ResultActivity
+import java.security.AccessController.getContext
 
 class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerView.Adapter<FlowerAdapter.ViewHolder>(){
-    class ViewHolder(var binding: ItemFlowerBinding) : RecyclerView.ViewHolder(binding.root)
+
+    class ViewHolder(var binding: ItemFlower2Binding) : RecyclerView.ViewHolder(binding.root)
 
     private lateinit var onItemClickCallback: OnItemClickCallBack
 
@@ -17,7 +22,7 @@ class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerVie
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemFlowerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemFlower2Binding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -32,6 +37,10 @@ class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerVie
         holder.itemView.setOnClickListener{
             onItemClickCallback.onItemClicked(listFlower[holder.adapterPosition])
         }
+
+//        holder.binding.btnFav.setOnClickListener {
+//            Toast.makeText(ResultActivity, "Ditekan", Toast.LENGTH_SHORT).show()
+//        }
     }
 
     override fun getItemCount(): Int = listFlower.size
