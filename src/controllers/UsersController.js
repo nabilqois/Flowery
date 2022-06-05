@@ -1,5 +1,8 @@
 const User =  require("../models/User");
 
+const hash = require('../utils/hash');
+const { ERR_INVALID_PASSWORD } = require('../utils/errorTypes');
+
 const addUserHandler = async(request, h) => {
   try {
       var newUser = new User(request.payload);
@@ -53,12 +56,25 @@ const getUserByIdHandler = async (request, h) => {
 
 const editUserByIdHandler = async (request, h) => {
   try {
-    var user = await User.findByIdAndUpdate(request.params.id, request.payload, { new: true });
-    return h.response({
-      error: false,
-      message: "User Updated",
-      result: user
-    });
+    var id = request.params.id;
+    var oldPassword = request.payload.password;
+    // var hashOldPassword = await hash.make(request.payload.password);
+    var hashNewPassword = await hash.make(request.payload.new_password);
+    
+    if (hashNewPassword) {
+      var userAccount = await User.findById( id );
+      const passwordOk = await hash.compare(oldPassword, userAccount.password);
+      if (!passwordOk) {
+          throw new Error(ERR_INVALID_PASSWORD);
+      }
+      const changePassword = {name: request.payload.name, email: request.payload.email, password: hashNewPassword};
+      var user = await User.findByIdAndUpdate(request.params.id, changePassword, { new: true });
+      return h.response({
+        error: false,
+        message: "User Updated",
+        result: user
+      });
+    }
   } catch (error) {
     return h.response({
       error: true,
