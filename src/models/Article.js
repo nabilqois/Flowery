@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const articlesmodel = mongoose.Schema({
+    flower_id: {
+        type: String,
+        required: "Flower Id is required",
+    },
     title_article: {
         type: String,
         required: "Title of the Article is required",
