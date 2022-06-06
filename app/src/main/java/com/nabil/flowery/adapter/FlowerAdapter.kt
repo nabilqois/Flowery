@@ -3,17 +3,33 @@ package com.nabil.flowery.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nabil.flowery.databinding.ItemFlower2Binding
 import com.nabil.flowery.databinding.ItemFlowerBinding
+import com.nabil.flowery.model.DetailFlowerModel
 import com.nabil.flowery.response.ListFlower
 import com.nabil.flowery.ui.camera.ResultActivity
 import java.security.AccessController.getContext
 
 class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerView.Adapter<FlowerAdapter.ViewHolder>(){
 
-    class ViewHolder(var binding: ItemFlower2Binding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(private val binding: ItemFlower2Binding) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(flower: ListFlower) {
+            with(binding) {
+                tvFlowerName.text = flower.global_name
+                tvFlowerName2.text = flower.local_name
+                Glide.with(binding.root)
+                    .load(flower.images)
+                    .into(binding.imgFlower)
+                btnFav.setOnClickListener {
+                    Toast.makeText(it.context, "Ditekan", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
 
     private lateinit var onItemClickCallback: OnItemClickCallBack
 
@@ -27,12 +43,13 @@ class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerVie
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val result = listFlower[position]
-        holder.binding.tvFlowerName.text = result.global_name
-        holder.binding.tvFlowerName2.text = result.local_name
-        Glide.with(holder.binding.root)
-            .load(result.images)
-            .into(holder.binding.imgFlower)
+        holder.bind(listFlower[position])
+//        val result = listFlower[position]
+//        holder.binding.tvFlowerName.text = result.global_name
+//        holder.binding.tvFlowerName2.text = result.local_name
+//        Glide.with(holder.binding.root)
+//            .load(result.images)
+//            .into(holder.binding.imgFlower)
 
         holder.itemView.setOnClickListener{
             onItemClickCallback.onItemClicked(listFlower[holder.adapterPosition])
