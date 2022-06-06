@@ -7,17 +7,32 @@
     tools:context=".ui.fragments.NotificationFragment"
     android:orientation="vertical">
 
+
     <TimePicker
         android:id="@+id/TimePicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="328dp"
         android:timePickerMode="spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <DatePicker
+        android:id="@+id/DatePicker"
+        android:layout_width="match_parent"
+        android:layout_height="327dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="240dp"
+        android:datePickerMode="spinner"
+        app:layout_constraintBottom_toTopOf="@+id/TimePicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/setAlarmButton"
@@ -29,8 +44,10 @@
         android:text="@string/set_alarm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TimePicker" />
+        app:layout_constraintTop_toBottomOf="@+id/TimePicker"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
