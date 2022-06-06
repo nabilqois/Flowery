@@ -26,7 +26,7 @@ class NotificationFunctionFragment : Fragment() {
     private lateinit var timePicker: TimePicker
     private lateinit var button: Button
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentNotificationFunctionBinding.inflate(inflater, container, false)
         return binding.root
 

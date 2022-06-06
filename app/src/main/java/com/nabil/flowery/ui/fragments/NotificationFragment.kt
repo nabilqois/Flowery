@@ -11,7 +11,7 @@ class NotificationFragment : Fragment() {
 
     private lateinit var binding: FragmentNotificationBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentNotificationBinding.inflate(inflater, container, false)
         return binding.root
     }
