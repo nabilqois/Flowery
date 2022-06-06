@@ -7,9 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nabil.flowery.R
 import com.nabil.flowery.adapter.FlowerAdapter
 import com.nabil.flowery.database.Favorite
 import com.nabil.flowery.databinding.FragmentFavoriteBinding
