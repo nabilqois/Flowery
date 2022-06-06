@@ -75,6 +75,13 @@ const editUserByIdHandler = async (request, h) => {
         result: user
       });
     }
+      // const update = { name: request.payload.name, email: email, password: oldPassword };
+      // var useredit = await User.findByIdAndUpdate(request.params.id, update, { new: true });
+      // return h.response({
+      //   error: false,
+      //   message: "User Updated",
+      //   result: useredit
+      // });
   } catch (error) {
     return h.response({
       error: true,
