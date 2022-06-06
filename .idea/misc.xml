@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/activity_detail_flower.xml" value="0.22447916666666667" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/fragment_favorite.xml" value="0.22447916666666667" />
         <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/fragment_notification.xml" value="0.33" />
-        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/fragment_profile.xml" value="0.22447916666666667" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/fragment_notification_function.xml" value="0.22447916666666667" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/drawable/sv_background.xml" value="0.132" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
