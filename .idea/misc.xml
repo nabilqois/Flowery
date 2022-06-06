@@ -31,7 +31,8 @@
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/drawable/sv_background.xml" value="0.132" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/activity_detail_flower.xml" value="0.25" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/activity_result.xml" value="0.1" />
+        <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/activity_result.xml" value="0.25" />
+        <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/fragment_favorite.xml" value="0.20416666666666666" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/item_flower.xml" value="0.22" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/item_flower2.xml" value="0.42003853564547206" />

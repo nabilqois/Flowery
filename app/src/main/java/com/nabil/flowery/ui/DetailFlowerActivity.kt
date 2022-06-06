@@ -52,13 +52,13 @@ class DetailFlowerActivity : AppCompatActivity() {
 
                         setButtonAttribute(
                             applicationContext,
-                            "Dalam Perawatan",
+                            "Hapus Dari Koleksi",
                             R.color.primary_2,
                             R.color.white,
                             4,
                             R.color.primary_2,
                             R.color.primary_2,
-                            R.drawable.ic_bookmark
+                            R.drawable.ic_delete
                         )
                         Log.d("nabil: ", count.toString())
                     } else {
@@ -72,7 +72,7 @@ class DetailFlowerActivity : AppCompatActivity() {
                             0,
                             R.color.primary_2,
                             R.color.white,
-                            R.drawable.ic_bookmark_outline
+                            R.drawable.ic_bookmark
                         )
                     }
                 }
@@ -80,13 +80,8 @@ class DetailFlowerActivity : AppCompatActivity() {
         }
 
         binding.btnRawat.setOnClickListener {
-//            binding.btnRawat.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
-//            binding.btnRawat.strokeWidth = 4
-//            binding.btnRawat.strokeColor = ContextCompat.getColorStateList(this, R.color.primary_2)
-//            binding.btnRawat.setIconTintResource(R.color.black)
-//            binding.btnRawat.setTextColor(ContextCompat.getColor(this, R.color.black))
-//            binding.btnRawat.setIconResource(R.drawable.ic_home)
             isClicked = !isClicked
+
             if (isClicked) {
                 val date = getCurrentDate()
                 Log.d("Date", "date: $date")
@@ -100,13 +95,13 @@ class DetailFlowerActivity : AppCompatActivity() {
 
                 setButtonAttribute(
                     this,
-                    "Dalam Perawatan",
+                    "Hapus Dari Koleksi",
                     R.color.primary_2,
                     R.color.white,
                     4,
                     R.color.primary_2,
                     R.color.primary_2,
-                    R.drawable.ic_bookmark
+                    R.drawable.ic_delete
                 )
             } else {
                 detailFlowerModel.deleteFav(detail._id!!)
@@ -119,7 +114,7 @@ class DetailFlowerActivity : AppCompatActivity() {
                     0,
                     R.color.primary_2,
                     R.color.white,
-                    R.drawable.ic_bookmark_outline
+                    R.drawable.ic_bookmark
                 )
             }
 
