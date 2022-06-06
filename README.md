@@ -21,3 +21,4 @@
 * Added Alarm/Reminder Function (No Multiple Instances)
 * Added Search Function on Keyboard HomeFrgament
 * Added Room Database for Favorite Functionality
+* Added Push Notification to AlarmReceiver Functionality
