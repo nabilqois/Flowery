@@ -1,3 +1,13 @@
+See full history commit here :
+
+[CC](https://github.com/nabilqois/Flowery/commits/CC)
+
+[MD](https://github.com/nabilqois/Flowery/commits/MD)
+
+[ML](https://github.com/nabilqois/Flowery/commits/ML)
+
+
+
 # Flowery - Ornamental Flower Identifier
 (team name)
 
