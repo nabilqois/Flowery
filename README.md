@@ -23,10 +23,11 @@ Muhammad Rafi Aziz C7211F1952
 ## Getting Started
 
 1. Clone the repo git clone https://github.com/nabilqois/Flowery.git
-2. Go to your IDE and open project from clone repo
-3. Sync and Wait
-4. After complete, run: on android available device
-6. It will open app your active device
+2. Open your IDE and open project from git repo clone
+3. Wait for the IDE to sync the project.
+4. After complete, run your IDE with the connected android device or emulator.
+5. The app will open on your device.
+
 
 ## Development Flow
 
