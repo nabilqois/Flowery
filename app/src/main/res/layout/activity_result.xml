@@ -5,13 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
     tools:context=".ui.camera.ResultActivity">
 
     <ImageView
         android:id="@+id/result_image"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/ic_image"
@@ -39,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/result_image"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/item_flower2"
+        tools:listitem="@layout/item_flower"
         />
 
 </LinearLayout>

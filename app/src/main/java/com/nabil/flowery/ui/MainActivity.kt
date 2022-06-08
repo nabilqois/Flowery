@@ -1,11 +1,14 @@
 package com.nabil.flowery.ui
 
 import android.Manifest
+import android.app.AlertDialog
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Intent
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -38,6 +41,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        createNotificationChannel()
+        Toast.makeText(applicationContext,"Hello", Toast.LENGTH_SHORT).show()
+        val alert = AlertDialog.Builder(applicationContext)
 
         if (!allPermissionsGranted()) {
             ActivityCompat.requestPermissions(
@@ -84,6 +90,15 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }
+    }
+    private fun createNotificationChannel(){
+        val name = "Channel"
+        val desc = "Desc"
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
+        val channel = NotificationChannel("channel1",name,importance)
+        channel.description = desc
+        val notificationManager = applicationContext.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.createNotificationChannel(channel)
     }
 
     private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {

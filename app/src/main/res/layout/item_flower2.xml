@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
     card_view:strokeColor="@color/black"
     card_view:strokeWidth="1dp"
     card_view:cardCornerRadius="8dp"
-    android:layout_marginBottom="16dp"
     android:id="@+id/item_flower2">
 
     <androidx.constraintlayout.widget.ConstraintLayout
