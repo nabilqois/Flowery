@@ -38,7 +38,7 @@ class FavoriteFragment : Fragment() {
         setRecycleView()
         favoriteModel.getAllFav()?.observe(viewLifecycleOwner) {
             val list = mapList(it)
-            favoriteAdapter.setListFlower(list)
+            favoriteAdapter.setFavorite(list)
         }
     }
 
