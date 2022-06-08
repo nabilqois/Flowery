@@ -20,3 +20,4 @@
 * Fixed RegisterLayout (Zoomed in with real device)
 * Added Alarm/Reminder Function (No Multiple Instances)
 * Added Search Function on Keyboard HomeFrgament
+* Added Favorite Flower Function
