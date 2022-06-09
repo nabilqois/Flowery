@@ -21,7 +21,7 @@ class AuthModelRegis: ViewModel() {
                 ) {
                     val user = response.body()
                     if(user != null){
-                        TODO()
+                        Log.e("Register Success", user.message)
                     }
                 }
 

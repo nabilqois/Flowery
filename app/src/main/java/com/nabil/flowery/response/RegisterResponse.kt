@@ -5,6 +5,6 @@ import kotlinx.parcelize.Parcelize
 
 
 data class RegisterResponse(
-    val name:String,
-    val email:String
+    val error:String,
+    val message:String
 )
