@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:padding="16dp"
     tools:context=".ui.LoginActivity">
 
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView2"
-        android:layout_width="384dp"
+        android:layout_width="match_parent"
         android:layout_height="215dp"
         android:layout_marginTop="100dp"
         android:background="@drawable/login_backdrop"
@@ -37,6 +36,7 @@
         android:id="@+id/textEmailBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/login_email"
         android:textColor="@color/white"
@@ -47,6 +47,7 @@
         android:id="@+id/textPassBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="@string/login_password"
         android:textColor="@color/white"
@@ -56,7 +57,7 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/emailBox"
         style="@style/Widget.AppCompat.EditText"
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="49dp"
         android:layout_marginTop="144dp"
         android:textColor="@color/white"
@@ -69,7 +70,7 @@
         android:id="@+id/passBox"
         style="@style/Widget.AppCompat.EditText"
         android:inputType="textPassword"
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="49dp"
         android:layout_marginTop="240dp"
         android:textColor="@color/white"
