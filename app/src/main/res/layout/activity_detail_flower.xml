@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
+    android:fillViewport="true"
     tools:context=".ui.DetailFlowerActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="56dp"
+        >
 
     <ImageView
         android:id="@+id/img_flower"
-        android:layout_width="220dp"
+        android:layout_width="match_parent"
         android:layout_height="230dp"
         tools:src="@drawable/ic_image"
         android:layout_marginTop="16dp"
@@ -39,25 +52,104 @@
         app:layout_constraintTop_toBottomOf="@id/tv_flower_name"
         app:layout_constraintStart_toStartOf="parent"
         />
-<!--    style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
-    <com.google.android.material.button.MaterialButton
 
-        android:id="@+id/btn_rawat"
+    <TextView
+        android:id="@+id/tv_plant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cara Menanam Bunga"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_flower_name_2"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_plant_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Tutorial list"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_plant"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_take_care"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cara Merawat Bunga"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_plant_list"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_take_care_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Tutorial list"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_take_care"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+<!--    style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/btn_rawat"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:insetTop="0dp"-->
+<!--        android:insetBottom="0dp"-->
+<!--        android:text="Rawat Bunga"-->
+<!--        android:textColor="@color/text_color"-->
+<!--        android:textAllCaps="false"-->
+<!--        app:icon="@drawable/ic_bookmark_outline"-->
+<!--        app:iconGravity="textStart"-->
+<!--        android:backgroundTint="@color/primary_2"-->
+<!--        app:strokeWidth="0dp"-->
+<!--        app:strokeColor="@color/black"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:text="Rawat Bunga"
-        android:textColor="@color/text_color"
-        android:textAllCaps="false"
-        app:icon="@drawable/ic_bookmark_outline"
-        app:iconGravity="textStart"
-        android:backgroundTint="@color/primary_2"
-        app:strokeWidth="0dp"
-        app:strokeColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:backgroundTint="@color/white"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_rawat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Rawat Bunga"
+            android:textColor="@color/text_color"
+            android:textAllCaps="false"
+            app:icon="@drawable/ic_bookmark_outline"
+            app:iconGravity="textStart"
+            android:backgroundTint="@color/primary_2"
+            app:strokeWidth="0dp"
+            app:strokeColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </FrameLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

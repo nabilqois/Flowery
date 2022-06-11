@@ -11,6 +11,8 @@ import com.bumptech.glide.Glide
 import com.nabil.flowery.R
 import com.nabil.flowery.databinding.ActivityDetailFlowerBinding
 import com.nabil.flowery.model.DetailFlowerModel
+import com.nabil.flowery.model.TutorialModel
+import com.nabil.flowery.pref.UserPref
 import com.nabil.flowery.response.ListFlower
 import com.nabil.flowery.util.getCurrentDate
 import kotlinx.coroutines.CoroutineScope
@@ -23,13 +25,15 @@ class DetailFlowerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailFlowerBinding
     private val detailFlowerModel: DetailFlowerModel by viewModels()
 
+    private val tutorialModel: TutorialModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailFlowerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val detail = intent.getParcelableExtra<ListFlower>(EXTRA_DETAIL) as ListFlower
-        Toast.makeText(this, detail.toString(), Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, detail.toString(), Toast.LENGTH_SHORT).show()
 
         binding.apply {
             Glide.with(binding.root)
@@ -80,12 +84,6 @@ class DetailFlowerActivity : AppCompatActivity() {
         }
 
         binding.btnRawat.setOnClickListener {
-//            binding.btnRawat.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
-//            binding.btnRawat.strokeWidth = 4
-//            binding.btnRawat.strokeColor = ContextCompat.getColorStateList(this, R.color.primary_2)
-//            binding.btnRawat.setIconTintResource(R.color.black)
-//            binding.btnRawat.setTextColor(ContextCompat.getColor(this, R.color.black))
-//            binding.btnRawat.setIconResource(R.drawable.ic_home)
             isClicked = !isClicked
             if (isClicked) {
                 val date = getCurrentDate()
@@ -123,6 +121,30 @@ class DetailFlowerActivity : AppCompatActivity() {
                 )
             }
 
+        }
+
+        getTutorial()
+    }
+
+    private fun getTutorial() {
+        val token = UserPref(this).getResponseLogin()
+
+        tutorialModel.getTutorialFlower(token)
+
+        tutorialModel.listTutorial.observe(this) { listTutorial ->
+            for (list in listTutorial.plant) {
+                Log.d("Detail Tutorial dengan For", list.toString())
+            }
+            Log.d("Detail Tutorial tanpa For", listTutorial.toString())
+            Log.d("Detail Tutorial tanpa For", listTutorial.plant[0].toString())
+
+            for (list in listTutorial.plant) {
+                binding.tvPlantList.append(list + "\n")
+            }
+
+            for (list in listTutorial.take_care) {
+                binding.tvTakeCareList.append(list + "\n")
+            }
         }
     }
 
