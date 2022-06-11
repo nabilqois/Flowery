@@ -38,7 +38,7 @@ class DetailFlowerActivity : AppCompatActivity() {
         binding.apply {
             Glide.with(binding.root)
                 .load(detail.images)
-//                .circleCrop()
+                .centerCrop()
                 .into(imgFlower)
 
             tvFlowerName.text = detail.local_name

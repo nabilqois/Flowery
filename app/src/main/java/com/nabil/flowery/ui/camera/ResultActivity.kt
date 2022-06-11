@@ -3,9 +3,11 @@ package com.nabil.flowery.ui.camera
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -46,6 +48,9 @@ class ResultActivity : AppCompatActivity() {
             Log.d("ResultActivity", kueri)
             Log.d("testDataIntent", kueri)
             Toast.makeText(this, kueri, Toast.LENGTH_SHORT).show()
+
+            binding.resultImage.visibility = View.GONE
+            binding.tvOutput.visibility = View.GONE
 
 //            setRecycleView()
             getListFlower(kueri)
