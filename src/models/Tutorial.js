@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const tutorialmodel = mongoose.Schema({
     flower_id: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Flower',
         required: "Flower Id is required",
     },
     plant: [{

@@ -20,7 +20,10 @@ const flowermodel = mongoose.Schema({
     images: {
         type: String,
         required: "Images is required",
-    } 
+    },
+    tutorials : [
+        { type: mongoose.Schema.Types.ObjectId, ref: 'Tutorial' }
+    ]
 }, {
     timestamps: true
 });

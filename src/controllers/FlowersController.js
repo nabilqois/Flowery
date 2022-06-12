@@ -20,7 +20,17 @@ const addFlowerHandler = async(request, h) => {
 
 const getAllFlowersHandler = async(request, h) => {
   try {
-      var flowers = await Flower.find().exec();
+      var flowers = await Flower.aggregate([
+        {
+            $lookup:
+            {
+                from: "tutorials",
+                localField: "_id",
+                foreignField: "flower_id",
+                as: "tutorials"
+            }
+        }
+      ]).exec();
       const { kueri } = request.query;
       if (kueri) {
         const lokal = flowers.filter((f) => f.local_name.toLowerCase().includes(kueri.toLowerCase()));
@@ -69,7 +79,18 @@ const getAllFlowersHandler = async(request, h) => {
 
 const getFlowerByIdHandler = async (request, h) => {
   try {
-      var flower = await Flower.findById(request.params.id).exec();
+      var flowers = await Flower.aggregate([
+        {
+            $lookup:
+            {
+                from: "tutorials",
+                localField: "_id",
+                foreignField: "flower_id",
+                as: "tutorials"
+            }
+        }
+      ]);
+      const flower = flowers.filter((f) => f._id==request.params.id);
       if (!flower) {
         return h.response({
           error: true,
