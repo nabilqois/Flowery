@@ -34,7 +34,7 @@ class SearchModel: ViewModel() {
                         _isError.value = false
 
                         _message.value = response.body()?.message!!.toString()
-                        Log.d("SearchModel", "message: ${response.body()?.message!!.toString()}")
+                        Log.d("SearchModel", "message: ${response.body()?.message!!}")
 
                         Log.d("SearchModel", "getListFLower ${response.body()}")
                         Log.d("SearchModel", "successful :  $token")

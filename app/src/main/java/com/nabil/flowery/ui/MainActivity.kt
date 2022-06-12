@@ -1,7 +1,6 @@
 package com.nabil.flowery.ui
 
 import android.Manifest
-import android.app.AlertDialog
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Intent
@@ -42,8 +41,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         createNotificationChannel()
-        Toast.makeText(applicationContext,"Hello", Toast.LENGTH_SHORT).show()
-        val alert = AlertDialog.Builder(applicationContext)
+
 
         if (!allPermissionsGranted()) {
             ActivityCompat.requestPermissions(

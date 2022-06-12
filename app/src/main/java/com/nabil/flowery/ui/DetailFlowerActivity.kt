@@ -1,11 +1,10 @@
 package com.nabil.flowery.ui
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.nabil.flowery.R
@@ -56,7 +55,7 @@ class DetailFlowerActivity : AppCompatActivity() {
 
                         setButtonAttribute(
                             applicationContext,
-                            "Dalam Perawatan",
+                            getString(R.string.in_care),
                             R.color.primary_2,
                             R.color.white,
                             4,
@@ -70,7 +69,7 @@ class DetailFlowerActivity : AppCompatActivity() {
 
                         setButtonAttribute(
                             applicationContext,
-                            "Rawat Bunga",
+                            getString(R.string.care_for),
                             R.color.white,
                             R.color.primary_2,
                             0,
@@ -98,7 +97,7 @@ class DetailFlowerActivity : AppCompatActivity() {
 
                 setButtonAttribute(
                     this,
-                    "Dalam Perawatan",
+                    getString(R.string.in_care),
                     R.color.primary_2,
                     R.color.white,
                     4,
@@ -111,7 +110,7 @@ class DetailFlowerActivity : AppCompatActivity() {
 
                 setButtonAttribute(
                     this,
-                    "Rawat Bunga",
+                    getString(R.string.care_for),
                     R.color.white,
                     R.color.primary_2,
                     0,

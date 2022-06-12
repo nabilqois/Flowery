@@ -2,7 +2,6 @@ package com.nabil.flowery.model
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.nabil.flowery.database.Favorite
 import com.nabil.flowery.database.FavoriteDao
