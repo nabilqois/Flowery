@@ -1,16 +1,26 @@
 package com.nabil.flowery.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.nabil.flowery.R
 import com.nabil.flowery.databinding.ItemFlower2Binding
+import com.nabil.flowery.databinding.ItemFlowerBinding
+import com.nabil.flowery.model.DetailFlowerModel
 import com.nabil.flowery.response.ListFlower
+import com.nabil.flowery.ui.camera.ResultActivity
+import java.security.AccessController.getContext
 
 class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerView.Adapter<FlowerAdapter.ViewHolder>(){
 
     class ViewHolder(private val binding: ItemFlower2Binding) : RecyclerView.ViewHolder(binding.root) {
+
+        val button = binding.btnFav
 
         fun bind(flower: ListFlower) {
             with(binding) {
@@ -19,9 +29,10 @@ class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerVie
                 Glide.with(binding.root)
                     .load(flower.images)
                     .into(binding.imgFlower)
-                btnFav.setOnClickListener {
-                    Toast.makeText(it.context, "Ditekan", Toast.LENGTH_SHORT).show()
-                }
+//                btnFav.setOnClickListener {
+//                    Toast.makeText(it.context, "Ditekan", Toast.LENGTH_SHORT).show()
+//                }
+
             }
         }
     }
@@ -39,10 +50,24 @@ class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerVie
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(listFlower[position])
+//        val result = listFlower[position]
+//        holder.binding.tvFlowerName.text = result.global_name
+//        holder.binding.tvFlowerName2.text = result.local_name
+//        Glide.with(holder.binding.root)
+//            .load(result.images)
+//            .into(holder.binding.imgFlower)
 
         holder.itemView.setOnClickListener{
             onItemClickCallback.onItemClicked(listFlower[holder.adapterPosition])
         }
+
+        holder.button.setOnClickListener {
+            onItemClickCallback.onButtonClicked(listFlower[holder.adapterPosition], it)
+        }
+
+//        holder.binding.btnFav.setOnClickListener {
+//            Toast.makeText(ResultActivity, "Ditekan", Toast.LENGTH_SHORT).show()
+//        }
     }
 
     override fun getItemCount(): Int = listFlower.size
@@ -62,5 +87,6 @@ class FlowerAdapter(private val listFlower: ArrayList<ListFlower>) : RecyclerVie
 
     interface OnItemClickCallBack {
         fun onItemClicked(data: ListFlower)
+        fun onButtonClicked(data: ListFlower, view: View)
     }
 }

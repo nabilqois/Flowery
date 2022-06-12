@@ -3,12 +3,14 @@ package com.nabil.flowery.ui.camera
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.opengl.Visibility
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nabil.flowery.R
 import com.nabil.flowery.adapter.FlowerAdapter
@@ -17,6 +19,7 @@ import com.nabil.flowery.ml.Model
 import com.nabil.flowery.model.SearchModel
 import com.nabil.flowery.pref.UserPref
 import com.nabil.flowery.response.ListFlower
+import com.nabil.flowery.response.SearchResponse
 import com.nabil.flowery.ui.DetailFlowerActivity
 import com.nabil.flowery.util.rotateBitmap
 import org.tensorflow.lite.support.image.TensorImage
@@ -136,6 +139,13 @@ class ResultActivity : AppCompatActivity() {
                 override fun onItemClicked(data: ListFlower) {
                     Log.d("onItemClicked", "its clicked")
                     showSelectedFlower(data)
+                }
+
+                override fun onButtonClicked(data: ListFlower, view: View) {
+                    Log.d("onButtonClicked", data.toString())
+//                    view.visibility = View.GONE
+                    view.setBackgroundResource(R.drawable.ic_bookmark)
+//                    view.setBackgroundColor(ContextCompat.getColor(context, R.color.purple_500))
                 }
             })
         }

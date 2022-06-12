@@ -51,7 +51,7 @@
             android:id="@+id/btn_fav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_bookmark"
+            android:src="@drawable/ic_bookmark_outline"
             android:background="@null"
             card_view:layout_constraintTop_toTopOf="parent"
             card_view:layout_constraintBottom_toBottomOf="parent"
