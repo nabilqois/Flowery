@@ -21,3 +21,5 @@
 * Added Alarm/Reminder Function (No Multiple Instances)
 * Added Search Function on Keyboard HomeFrgament
 * Added Favorite Flower Function
+* Added Tutorial Flower (How-To)
+* Fixed ResultActivity
