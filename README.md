@@ -44,3 +44,8 @@ Muhammad Rafi Aziz C7211F1952
 1. Clone this repository
 2. Create meaningful commit
 3. Don't push directly to master
+
+
+## API Documentation
+
+Here is the link for it : https://documenter.getpostman.com/view/19964579/Uz5CKdBc#intro
