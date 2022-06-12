@@ -9,10 +9,10 @@ const articlesmodel = mongoose.Schema({
         type: String,
         required: "Title of the Article is required",
     },
-    content_article: {
+    content_article: [{
         type: String,
         required: "Content of the Article is required",
-    }
+    }]
 }, {
     timestamps: true
 });
