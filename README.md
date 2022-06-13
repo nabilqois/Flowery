@@ -15,20 +15,16 @@ See full history commit here :
 Our idea:  
 To detect and recognize any types of ornamental flower by scanning them with a smartphone. This app will help the average user to know about ornamental flowers. From this recognition we will then be able to give information on that ornamental flower such as the method of raising them, and their uses.
 
-# Android Developer
+# Team Members
 
-Nabil Qois A7211F1949 |
-Ray Ghanim Adhizky Surya Wijaya A7005F0434
-
-# Machine Learning
-
-Akbar Hidayatullah Harahap M7222Z2014 |
-Elsa Adela Marselia M7006J0487
-
-# Cloud Computing
-
-Ilham Fathur Robbani C2152F1675 |
-Muhammad Rafi Aziz C7211F1952
+|         Member         | Student ID |        Path        |                Project Role                |                                                  Contacts                                                  |
+| :--------------------: | :--------: | :----------------: | :----------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
+|   Elsa Adela Marselia    |  M7006J0487  |  Machine Learning  |         Machine Learning Engineer         |   [![elsa-linkedin][linkedin-shield]][elsa-linkedin-url][![elsa-github][github-shield]][elsa-github-url]  |
+|   Akbar Hidayatullah Harahap   |  M7222Z2014  |  Machine Learning  |             Machine Learning Engineer              |     [![akbar-linkedin][linkedin-shield]][akbar-linkedin-url][![akbar-github][github-shield]][akbar-github-url]     |
+|  Nabil Qois  |  A7211F1949  | Mobile Development |                  Android Mobile Developer                  | [![nabil-linkedin][linkedin-shield]][nabil-linkedin-url][![nabil-github][github-shield]][nabil-github-url] |
+|     Ray Ghanim Adhizky Surya Wijaya      |   A7005F0434  |  Mobile Development   |                   Android Mobile Developer                     | [![ray-linkedin][linkedin-shield]][ray-linkedin-url][![ray-github][github-shield]][ray-github-url] |
+| Ilham Fathur Robbani |  C2152F1675  |  Cloud Computing   |                   Cloud Computing Engineer                   |     [![ilham-linkedin][linkedin-shield]][ilham-linkedin-url][![ilham-github][github-shield]][ilham-github-url]     |
+| Muhammad Rafi Aziz |  C7211F1952  |  Cloud Computing  |                   Cloud Computing Engineer                   |     [![rafi-linkedin][linkedin-shield]][rafi-linkedin-url][![vio-github][github-shield]][rafi-github-url]     |
 
 ## Getting Started
 
@@ -49,3 +45,25 @@ Muhammad Rafi Aziz C7211F1952
 ## API Documentation
 
 Here is the link for it : https://documenter.getpostman.com/view/19964579/Uz5CKdBc#intro
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+<!-- LinkedIn Link -->
+
+[linkedin-shield]: https://img.shields.io/badge/LinkedIn--blue?style=social&logo=Linkedin
+[elsa-linkedin-url]: https://www.linkedin.com/in/elsa-adela-marselia-8b3648190/
+[akbar-linkedin-url]: https://www.linkedin.com/in/akbar-harahap-51863917a/
+[nabil-linkedin-url]: https://www.linkedin.com/in/nabilqois/
+[ray-linkedin-url]: https://www.linkedin.com/in/rayghanim/
+[ilham-linkedin-url]: https://www.linkedin.com/in/ilham-fathur-robbani-9ba084237/
+[rafi-linkedin-url]: https://www.linkedin.com/in/muhammad-rafi-a-98aa8a11a/
+
+<!-- Github Link -->
+
+[github-shield]: https://img.shields.io/badge/GitHub--blue?style=social&logo=Github
+[elsa-github-url]: https://github.com/elsaadela
+[akbar-github-url]: https://github.com/Qhiba
+[nabil-github-url]: https://github.com/nabilqois
+[ray-github-url]: https://github.com/cytraark
+[ilham-github-url]: https://github.com/fathurrobb
+[rafi-github-url]: https://github.com/mraziz098
