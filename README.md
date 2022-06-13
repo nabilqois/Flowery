@@ -1,3 +1,18 @@
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li><a href="#flowery---ornamental-flower-identifier">Flowery - Ornamental Flower Identifier</a></li>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#team-members">Team Members</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#development-flow">Development Flow</a></li>
+    <li><a href="#api-documentation">API Documentation</a></li>
+    <li><a href="#full-commit-history">Full Commit History</a></li>
+    <li><a href="#acknowledgement">Acknowledgement</a></li>
+  </ol>
+</details>
+
 # Flowery - Ornamental Flower Identifier
  C22-PS086
 
@@ -48,7 +63,7 @@ _For more usage, please refer to the [**Documentation**](https://documenter.getp
 [**ML**](https://github.com/nabilqois/Flowery/commits/ML)
 
 
-## Acknowledgements
+## Acknowledgement
 ![download (2)](https://user-images.githubusercontent.com/99316056/173269690-b8a90085-90aa-4209-b410-90afd4ed703d.png)
 
 <!-- MARKDOWN LINKS & IMAGES -->
