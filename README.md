@@ -1,8 +1,10 @@
+# Flowery - Ornamental Flower Identifier
+ C22-PS086
+
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
-    <li><a href="#flowery---ornamental-flower-identifier">Flowery - Ornamental Flower Identifier</a></li>
     <li><a href="#description">Description</a></li>
     <li><a href="#team-members">Team Members</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
@@ -12,9 +14,6 @@
     <li><a href="#acknowledgement">Acknowledgement</a></li>
   </ol>
 </details>
-
-# Flowery - Ornamental Flower Identifier
- C22-PS086
 
 # Description 
 Detect and recognize any types of ornamental flower by scanning them with a smartphone. This app will help the average user to know about ornamental flowers. From this recognition we will then be able to give information on that ornamental flower such as the method of raising them, and their uses.
