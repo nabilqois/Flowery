@@ -91,16 +91,6 @@ const getFlowerByIdHandler = async (request, h) => {
         }
       ]);
       const flower = flowers.filter((f) => f._id==request.params.id);
-      const flowerObject = flower.map((f)=>({
-        id: f._id,
-        global_name: f.global_name,
-        scientific_name: f.scientific_name,
-        local_name: f.local_name,
-        reference: f.reference,
-        images: f.images,
-        plant: f.tutorials.map(item => item.plant),
-        take_care: f.tutorials.map(item => item.take_care)
-      }));
       if (!flower) {
         return h.response({
           error: true,
@@ -110,7 +100,7 @@ const getFlowerByIdHandler = async (request, h) => {
       return h.response({
         error: false,
         message: "success",
-        result: flowerObject
+        result: flower
       });
   } catch (error) {
       return h.response({
