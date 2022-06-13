@@ -1,13 +1,3 @@
-See full history commit here :
-
-[CC](https://github.com/nabilqois/Flowery/commits/CC)
-
-[MD](https://github.com/nabilqois/Flowery/commits/MD)
-
-[ML](https://github.com/nabilqois/Flowery/commits/ML)
-
-
-
 # Flowery - Ornamental Flower Identifier
  C22-PS086
 
@@ -25,6 +15,7 @@ To detect and recognize any types of ornamental flower by scanning them with a s
 |     Ray Ghanim Adhizky Surya Wijaya      |   A7005F0434  |  Mobile Development   |                   Android Mobile Developer                     | [![ray-linkedin][linkedin-shield]][ray-linkedin-url][![ray-github][github-shield]][ray-github-url] |
 | Ilham Fathur Robbani |  C2152F1675  |  Cloud Computing   |                   Cloud Computing Engineer                   |     [![ilham-linkedin][linkedin-shield]][ilham-linkedin-url][![ilham-github][github-shield]][ilham-github-url]     |
 | Muhammad Rafi Aziz |  C7211F1952  |  Cloud Computing  |                   Cloud Computing Engineer                   |     [![rafi-linkedin][linkedin-shield]][rafi-linkedin-url][![vio-github][github-shield]][rafi-github-url]     |
+
 
 ## Getting Started
 
@@ -44,7 +35,20 @@ To detect and recognize any types of ornamental flower by scanning them with a s
 
 ## API Documentation
 
-Here is the link for it : https://documenter.getpostman.com/view/19964579/Uz5CKdBc#intro
+Our Rest API is the way for computer systems to communicate over HTTP in a similar way to web browsers and servers. We share databases between systems to enable our application, working effectively for our users.
+
+_For more usage, please refer to the [**Documentation**](https://documenter.getpostman.com/view/19964579/Uz5CKdBc#intro)._
+
+
+# Full Commit History
+
+[**CC**](https://github.com/nabilqois/Flowery/commits/CC)
+
+[**MD**](https://github.com/nabilqois/Flowery/commits/MD)
+
+[**ML**](https://github.com/nabilqois/Flowery/commits/ML)
+
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
