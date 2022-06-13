@@ -1,9 +1,8 @@
 # Flowery - Ornamental Flower Identifier
  C22-PS086
 
-# Description
-Our idea:  
-To detect and recognize any types of ornamental flower by scanning them with a smartphone. This app will help the average user to know about ornamental flowers. From this recognition we will then be able to give information on that ornamental flower such as the method of raising them, and their uses.
+# Description 
+Detect and recognize any types of ornamental flower by scanning them with a smartphone. This app will help the average user to know about ornamental flowers. From this recognition we will then be able to give information on that ornamental flower such as the method of raising them, and their uses.
 
 # Team Members
 
@@ -40,7 +39,7 @@ Our Rest API is the way for computer systems to communicate over HTTP in a simil
 _For more usage, please refer to the [**Documentation**](https://documenter.getpostman.com/view/19964579/Uz5CKdBc#intro)._
 
 
-# Full Commit History
+## Full Commit History
 
 [**CC**](https://github.com/nabilqois/Flowery/commits/CC)
 
@@ -49,6 +48,8 @@ _For more usage, please refer to the [**Documentation**](https://documenter.getp
 [**ML**](https://github.com/nabilqois/Flowery/commits/ML)
 
 
+## Acknowledgements
+![download (2)](https://user-images.githubusercontent.com/99316056/173269690-b8a90085-90aa-4209-b410-90afd4ed703d.png)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
