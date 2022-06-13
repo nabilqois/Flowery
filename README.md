@@ -1,5 +1,5 @@
 # Flowery - Ornamental Flower Identifier
- C22-PS086
+ **C22-PS086**
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -15,10 +15,10 @@
   </ol>
 </details>
 
-# Description 
+## Description 
 Detect and recognize any types of ornamental flower by scanning them with a smartphone. This app will help the average user to know about ornamental flowers. From this recognition we will then be able to give information on that ornamental flower such as the method of raising them, and their uses.
 
-# Team Members
+## Team Members
 
 |         Member         | Student ID |        Path        |                Project Role                |                                                  Contacts                                                  |
 | :--------------------: | :--------: | :----------------: | :----------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
