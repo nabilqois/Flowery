@@ -9,7 +9,7 @@ See full history commit here :
 
 
 # Flowery - Ornamental Flower Identifier
-(team name)
+ C22-PS086
 
 # Description
 Our idea:  
