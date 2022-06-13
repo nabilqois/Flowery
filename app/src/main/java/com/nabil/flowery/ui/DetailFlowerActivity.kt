@@ -127,21 +127,22 @@ class DetailFlowerActivity : AppCompatActivity() {
 
     private fun getTutorial() {
         val token = UserPref(this).getResponseLogin()
+        val detail = intent.getParcelableExtra<ListFlower>(EXTRA_DETAIL) as ListFlower
 
-        tutorialModel.getTutorialFlower(token)
+        tutorialModel.getTutorialFlower(token, detail._id!!)
 
         tutorialModel.listTutorial.observe(this) { listTutorial ->
-            for (list in listTutorial.plant) {
-                Log.d("Detail Tutorial dengan For", list.toString())
+            for (list in listTutorial[0].plant[0]) {
+                Log.d("Detail Tutorial dengan For", "$list\ntes")
             }
-            Log.d("Detail Tutorial tanpa For", listTutorial.toString())
-            Log.d("Detail Tutorial tanpa For", listTutorial.plant[0].toString())
+//            Log.d("Detail Tutorial tanpa For", listTutorial.toString())
+//            Log.d("Detail Tutorial tanpa For", listTutorial[0].toString())
 
-            for (list in listTutorial.plant) {
+            for (list in listTutorial[0].plant[0]) {
                 binding.tvPlantList.append(list + "\n")
             }
 
-            for (list in listTutorial.take_care) {
+            for (list in listTutorial[0].take_care[0]) {
                 binding.tvTakeCareList.append(list + "\n")
             }
         }

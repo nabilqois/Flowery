@@ -12,11 +12,11 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class TutorialModel : ViewModel() {
-    private val _listTutorial = MutableLiveData<TutorialResult>()
-    val listTutorial: LiveData<TutorialResult> = _listTutorial
+    private val _listTutorial = MutableLiveData<List<TutorialResult>>()
+    val listTutorial: LiveData<List<TutorialResult>> = _listTutorial
 
-    fun getTutorialFlower(token : String) {
-        ApiConfig.getApiService().getTutorial(token)
+    fun getTutorialFlower(token: String, id:String ) {
+        ApiConfig.getApiService().getTutorial(token, id)
             .enqueue(object : Callback<TutorialResponse> {
                 override fun onResponse(
                     call: Call<TutorialResponse>,
@@ -36,4 +36,33 @@ class TutorialModel : ViewModel() {
 
             })
     }
+
+//    fun getTutorialFlower(token : String, id: String) {
+//        ApiConfig.getApiService().getTutorial(token, id)
+//            .enqueue(object : Callback<List<TutorialResponse>> {
+//                override fun onResponse(
+//                    call: Call<List<TutorialResponse>>,
+//                    response: Response<List<TutorialResponse>>
+//                ) {
+//                    if (response.isSuccessful) {
+//                        _listTutorial.value = response.body()?.
+//                        Log.d("TutorialModel berhasil", _listTutorial.toString())
+//                    } else {
+//                        Log.d("TutorialModel", "Terjadi kesalahan ${response.body()?.message}")
+//                    }
+////                }
+//
+//                override fun onFailure(call: Call<List<TutorialResponse>>, t: Throwable) {
+//                    Log.d("TutorialModel", "onFailure: ${t.message.toString()}")
+//                }
+//
+//            })
+//    }
+    
+//    fun getTutorialFlower(token: String, id: String) {
+//        ApiConfig.getApiService().getTutorial(token, id)
+//            .enqueue(object : Callback<> {
+//
+//            })
+//    }
 }

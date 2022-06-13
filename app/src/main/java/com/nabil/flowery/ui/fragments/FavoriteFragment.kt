@@ -67,6 +67,10 @@ class FavoriteFragment : Fragment() {
                 override fun onItemClicked(data: ListFlower) {
                     showSelectedFlower(data)
                 }
+
+                override fun onButtonClicked(data: ListFlower, view: View) {
+                    TODO("Not yet implemented")
+                }
             })
         }
     }

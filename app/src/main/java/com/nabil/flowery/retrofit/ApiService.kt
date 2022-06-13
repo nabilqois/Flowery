@@ -36,8 +36,9 @@ interface ApiService {
         @Header("Authorization") auth: String
     ) : Call<FlowerDayResponse>
 
-    @GET("tutorials/6294c09ed2ebd7dc3c0a4e4d")
+    @GET("flowers/{id}")
     fun getTutorial(
-        @Header("Authorization") auth: String
+        @Header("Authorization") auth: String,
+        @Path("id") id: String
     ) : Call<TutorialResponse>
 }
