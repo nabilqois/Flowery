@@ -3,9 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/drawable/ic_bookmark.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/drawable/ic_person.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/drawable/ic_switch_camera.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/drawable/icon_background.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/drawable/indicator_active_bg.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/drawable/indicator_inactive_bg.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/drawable/login_background.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/drawable/logreg_background.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/drawable/view_background.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/activity_camera.xml" value="0.38697916666666665" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/activity_login2.xml" value="0.33" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/activity_main.xml" value="0.2203125" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/activity_on_boarding2.xml" value="0.2203125" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/activity_result.xml" value="0.38697916666666665" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/content_login.xml" value="0.25" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/fragment_favorite.xml" value="0.2203125" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/fragment_notification.xml" value="0.33" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/fragment_profile.xml" value="0.35437330928764654" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/item_flower.xml" value="0.22447916666666667" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/item_flower2.xml" value="0.22447916666666667" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/item_flowerday.xml" value="0.5" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/layout/item_trivia.xml" value="0.22447916666666667" />
+        <entry key="..\:/Android Studio Projects/Flowery/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22447916666666667" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/drawable/sv_background.xml" value="0.132" />
+        <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/activity_detail_flower.xml" value="0.25" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/activity_result.xml" value="0.25" />
+        <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/fragment_favorite.xml" value="0.20416666666666666" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/item_flower.xml" value="0.22" />
+        <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/item_flower2.xml" value="0.42003853564547206" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/layout/sv_background.xml" value="0.20416666666666666" />
         <entry key="..\:/BangkitApp/ProductCapstone/Flowery/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
       </map>

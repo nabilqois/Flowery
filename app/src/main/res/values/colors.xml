@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!--Color Custom-->
     <color name="primary_1">#1ABC9C</color>
     <color name="primary_2">#27AE60</color>
 </resources>
