@@ -75,7 +75,7 @@ _For more usage, please refer to the [**Documentation**](https://documenter.getp
 [nabil-linkedin-url]: https://www.linkedin.com/in/nabilqois/
 [ray-linkedin-url]: https://www.linkedin.com/in/rayghanim/
 [ilham-linkedin-url]: https://www.linkedin.com/in/ilham-fathur-robbani-9ba084237/
-[rafi-linkedin-url]: https://www.linkedin.com/in/muhammad-rafi-a-98aa8a11a/
+[rafi-linkedin-url]: https://www.linkedin.com/in/muhammadrafiaziz
 
 <!-- Github Link -->
 
